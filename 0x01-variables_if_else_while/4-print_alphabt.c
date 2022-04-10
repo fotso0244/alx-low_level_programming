@@ -14,6 +14,6 @@ int main(void)
 		if ((car != 'q') && (car != 'e'))
 			putchar(car);
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
