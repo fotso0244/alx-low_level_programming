@@ -13,6 +13,6 @@ int main(void)
 	{
 		putchar(car);
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
