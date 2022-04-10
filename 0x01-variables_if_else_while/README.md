@@ -3,3 +3,4 @@ Code 1-last_digit.c prints last digit of number
 Code 2-print_alphabet prints alphabet
 Code 3-print_alphabets.c prints alphabet in lowercase and uppercase
 Code 4-print_alphabt.c print alphabet except q and e
+Code 5-print_numbers.c prints digits of base 10
