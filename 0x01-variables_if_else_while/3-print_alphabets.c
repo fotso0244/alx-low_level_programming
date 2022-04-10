@@ -15,10 +15,10 @@ int main(void)
 		putchar(car);
 	}
 
-	for (car = 'a'; car <= 'z'; car++)
+	for (car = 'A'; car <= 'Z'; car++)
 	{
-		printf("%c", toupper(car));
+		putchar(car);
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
