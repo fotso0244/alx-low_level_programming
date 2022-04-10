@@ -7,3 +7,4 @@ Code 5-print_numbers.c prints digits of base 10
 Code 6-print_numberz.c prints digits of base 10 with putchar function
 Code 7-print_tebahpla.c prints lowercase alphabets in reverse
 Code 8-print_base16.c prints numbers of base16
+Code 9-print_comb.c prints combination of digits from base 10
