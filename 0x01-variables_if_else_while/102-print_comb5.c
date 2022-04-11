@@ -20,7 +20,7 @@ int main(void)
 
 				for (l = 48; l <= 57; l++)
 				{
-					if (((10*o)+p) < ((10*q)+r))
+					if (((10 * o) + p) < ((10 * q) + r))
 					{
 						putchar(i);
 						putchar(j);
