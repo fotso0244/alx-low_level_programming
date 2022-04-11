@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int i, j, k, l;
+	int i, j, k, l, o = 0, p = 0, q = 0, r = 0;
 
 	for (i = 48; i <= 57; i++)
 	{
@@ -20,7 +20,7 @@ int main(void)
 
 				for (l = 48; l <= 57; l++)
 				{
-					if ((i <= k) && (j < l))
+					if (((10*o)+p) < ((10*q)+r))
 					{
 						putchar(i);
 						putchar(j);
@@ -33,9 +33,19 @@ int main(void)
 							putchar(' ');
 						}
 					}
+					r++;
 				}
+				q++;
+				r = 0;
 			}
+			p++;
+			q = 0;
+			r = 0;
 		}
+		o++;
+		p = 0;
+		q = 0;
+		r = 0;
 	}
 
 	putchar('\n');
