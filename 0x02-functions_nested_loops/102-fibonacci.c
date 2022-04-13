@@ -8,14 +8,16 @@
  */
 int fibonacci(int n)
 {
+	int res;
 
 	if (n == 1)
-		return (1);
+		res = 1;
 	else
 		if (n == 0)
-			return (0);
+			res = 0;
 		else
-			return (fibonacci(n - 1) + fibonacci(n -2));
+			res = fibonacci(n - 1) + fibonacci(n -2);
+	return (res);
 }
 
 int main(void)
