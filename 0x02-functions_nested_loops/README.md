@@ -4,3 +4,4 @@ Function 2-print_alphabet_x10.c prints alphabet in lowercase 10 times using _put
 Function 3-islower checks lowercase character
 Function 4-isalpha.c checks for alphabetic character
 Function 5-sign.c checks sign of number
+Function 6-abs.c returns absolute value of an integer
