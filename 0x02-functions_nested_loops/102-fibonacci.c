@@ -2,10 +2,13 @@
 /**
  * main - prints 50 fist fibonacci numbers beginning
  * 
- * fibonacci - computes fibonacci numbers
- * @n: number to calculate fibonacci
- *
  * Return: 0
+ */
+/**
+ * fibonacci - computes 50 first fibonacci numbers
+ * @n: fibonacci number
+ *
+ * Return: fibonacci(n)
  */
 int fibonacci(int n)
 {
@@ -20,7 +23,6 @@ int fibonacci(int n)
 			res = fibonacci(n - 1) + fibonacci(n - 2);
 	return (res);
 }
-
 int main(void)
 {
 	int i;
