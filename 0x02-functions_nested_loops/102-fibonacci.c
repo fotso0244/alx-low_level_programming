@@ -2,13 +2,14 @@
 /**
  * main - prints 50 fist fibonacci numbers beginning by 1 and 2
  * fibonacci_start_1_2 - computes fibonacci numbers beginning by 1 and 2
+ * fibonacci - computes fibonacci numbers
  * @n: number to calculate fibonacci
  *
  * Return: 0
  */
-int fibonacci_start_1_2(int n)
+int fibonacci(int n)
 {
-	int res, i;
+	int res;
 
 	if (n >= 0)
 	{
@@ -18,13 +19,19 @@ int fibonacci_start_1_2(int n)
 			if (n == 0)
 				res = 0;
 			else
-				res = fibonacci_start_1_2(n - 1) + fibonacci_start_1_2(n -2);
+				res = fibonacci(n - 1) + fibonacci_start(n -2);
 	}
-	i = res / 10;
+	return (res);
+}
+int fibonacci_start_1_2(int n)
+{
+	int i, res;
+	i = n / 10;
+
 	while (i > 10)
 		i = i / 10;
 	if ((i == 1) || (i == 2))
-		res = res;
+		res = res n;
 	else
 		res = 0;
 	return (res);
