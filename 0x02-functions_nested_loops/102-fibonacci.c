@@ -20,14 +20,13 @@ int fibonacci(int n)
 
 int main(void)
 {
-	int i = 1;
+	int i;
 
-	while (i <= 50)
+	for (i = 1; i <= 50; i++)
 	{
 		printf("%d", fibonacci(i));
 		if (i != 50)
 			printf(", ");
-		i++;
 		printf("gfghfg");
 	}
 	return (0);
