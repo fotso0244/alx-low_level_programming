@@ -32,7 +32,7 @@ int fibonacci_start_1_2(int n1)
 	{
 		i = i / 10;
 	}
-	if ((i == 1) || (i == 2))
+	if ((i % 10 == 1) || (i % 10 == 2))
 		res = n1;
 	else
 		res = 0;
