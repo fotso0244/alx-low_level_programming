@@ -19,7 +19,7 @@ int fibonacci(int n)
 			if (n == 0)
 				res = 0;
 			else
-				res = fibonacci(n - 1) + fibonacci_start(n -2);
+				res = fibonacci(n - 1) + fibonacci(n -2);
 	}
 	return (res);
 }
