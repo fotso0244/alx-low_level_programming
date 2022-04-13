@@ -7,7 +7,6 @@
  */
 int fibonacci(int n)
 {
-	int res;
 
 	if (n <= 1)
 		return (n);
