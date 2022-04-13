@@ -16,7 +16,6 @@ void print_times_table(int n)
 				if (((i * j) / 10) != 0)
 					if (((i * j) / 10) >= 10)
 					{
-						_putchar(' ');
 						k = (i * j) / 10;
 						_putchar((k / 10) + '0');
 						_putchar((k % 10) + '0');
@@ -24,14 +23,12 @@ void print_times_table(int n)
 					else
 					{
 						_putchar(' ');
-						_putchar(' ');
 						k = (i * j) / 10;
 						_putchar(k + '0');
 					}
 				else
 					if (j != 0)
 					{
-						_putchar(' ');
 						_putchar(' ');
 						_putchar(' ');
 					}
