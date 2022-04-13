@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
  * main - prints 50 fist fibonacci numbers beginning
+ * 
  * fibonacci - computes fibonacci numbers
  * @n: number to calculate fibonacci
  *
@@ -16,7 +17,7 @@ int fibonacci(int n)
 		if (n == 0)
 			res = 0;
 		else
-			res = fibonacci(n - 1) + fibonacci(n -2);
+			res = fibonacci(n - 1) + fibonacci(n - 2);
 	return (res);
 }
 
