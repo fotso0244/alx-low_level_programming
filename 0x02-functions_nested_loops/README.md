@@ -10,3 +10,4 @@ Function 8-24_hours.c prints every minute of day
 Function 9-times_table.c prints the 9 times table
 Function 10-add.c adds two numbers
 Function 11-print_to_98.c prints all numbers between n and 98
+Function 100-times_table.c prints n times table
