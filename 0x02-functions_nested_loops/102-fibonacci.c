@@ -12,6 +12,11 @@ int fibonacci(int n)
 		return (n);
 	return (fibonacci(n - 1) + fibonacci(n - 2));
 }
+/**
+ * main - computes fibonacci numbers
+ *
+ * Return: 0
+ */
 int main(void)
 {
 	int i;
