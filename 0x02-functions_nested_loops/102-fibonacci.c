@@ -42,9 +42,9 @@ int main(void)
 
 	while (i <= 50)
 	{
-		if (fibonacci_start_1_2(i) != 0)
+		if (fibonacci_start_1_2(fibonacci(i)) != 0)
 		{
-			printf("%d", fibonacci_start_1_2(i));
+			printf("%d", fibonacci_start_1_2(fibonacci(i));
 			i++;
 			if (i != 50)
 			{
@@ -56,5 +56,3 @@ int main(void)
 	}
 	return (0);
 }
-
-
