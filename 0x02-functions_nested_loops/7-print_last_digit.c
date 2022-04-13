@@ -12,7 +12,7 @@ int print_last_digit(int n)
 	if (n >= 0)
 		s = n % 10;
 	else
-		if (i == INT_MIN)
+		if (n == INT_MIN)
 			s = 8;
 		else
 			s = (n * (-1)) %  10;
