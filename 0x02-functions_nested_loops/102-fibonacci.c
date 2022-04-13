@@ -44,7 +44,7 @@ int main(void)
 	{
 		if (fibonacci_start_1_2(fibonacci(i)) != 0)
 		{
-			printf("%d", fibonacci_start_1_2(fibonacci(i));
+			printf("%d", fibonacci_start_1_2(fibonacci(i)));
 			i++;
 			if (i != 50)
 			{
