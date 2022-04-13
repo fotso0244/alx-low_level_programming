@@ -6,7 +6,7 @@
  *
  * Return: sum of multiples of 3 and 5
  */
-void print_sum_multiples(int n)
+void _start(void)
 {
 	int sum = 0, i;
 
