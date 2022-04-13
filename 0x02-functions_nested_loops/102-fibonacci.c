@@ -1,7 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints 50 fist fibonacci numbers beginning by 1 and 2
- * fibonacci_start_1_2 - computes fibonacci numbers beginning by 1 and 2
+ * main - prints 50 fist fibonacci numbers beginning
  * fibonacci - computes fibonacci numbers
  * @n: number to calculate fibonacci
  *
@@ -18,38 +17,13 @@ int fibonacci(int n)
 		else
 			return (fibonacci(n - 1) + fibonacci(n -2));
 }
-/*int fibonacci_start_1_2(int n1)
-{
-	int i;
-	i = n1 / 10;
 
-	while (i >= 10)
-	{
-		i = i / 10;
-	}
-	if (((i % 10) == 1) || ((i % 10) == 2))
-		return (n1);
-	else
-		return (0);
-}*/
 int main(void)
 {
 	int i = 1;
 
 	while (i <= 50)
 	{
-		/*if (fibonacci_start_1_2(fibonacci(j)) != 0)
-		{
-			printf("%d", fibonacci_start_1_2(fibonacci(j)));
-			j++;
-			i++;
-			if (i != 50)
-			{
-				printf(", ");
-			}
-		}
-		else
-			j++;*/
 		printf("%d, ", fibonacci(i));
 		i++;
 	}
