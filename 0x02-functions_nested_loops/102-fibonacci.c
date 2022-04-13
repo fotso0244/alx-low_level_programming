@@ -38,13 +38,14 @@ int fibonacci_start_1_2(int n)
 }
 int main(void)
 {
-	int i = 1;
+	int i = 1, j = 1;
 
 	while (i <= 50)
 	{
-		if (fibonacci_start_1_2(fibonacci(i)) != 0)
+		if (fibonacci_start_1_2(fibonacci(j)) != 0)
 		{
-			printf("%d", fibonacci_start_1_2(fibonacci(i)));
+			printf("%d", fibonacci_start_1_2(fibonacci(j)));
+			j++;
 			i++;
 			if (i != 50)
 			{
@@ -52,7 +53,7 @@ int main(void)
 			}
 		}
 		else
-			i++;
+			j++;
 	}
 	return (0);
 }
