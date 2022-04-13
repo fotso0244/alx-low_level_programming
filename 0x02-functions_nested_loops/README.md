@@ -8,3 +8,4 @@ Function 6-abs.c returns absolute value of an integer
 Function 7-print_last_digit prints last digit of an integer
 Function 8-24_hours.c prints every minute of day
 Function 9-times_table.c prints the 9 times table
+Function 10-add.c adds two numbers
