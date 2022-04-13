@@ -31,7 +31,7 @@ int fibonacci_start_1_2(int n)
 	while (i > 10)
 		i = i / 10;
 	if ((i == 1) || (i == 2))
-		res = res n;
+		res = n;
 	else
 		res = 0;
 	return (res);
