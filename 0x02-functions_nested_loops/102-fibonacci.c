@@ -31,7 +31,7 @@ int fibonacci_start_1_2(int n)
 }
 int main(void)
 {
-	int res, i = 1;
+	int i = 1;
 
 	while (i <= 50)
 	{
