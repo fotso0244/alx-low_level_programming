@@ -9,19 +9,17 @@
  */
 int fibonacci(int n)
 {
-	int res;
 
 	if (n >= 0)
 	{
 		if (n == 1)
-			res = 1;
+			return (1);
 		else
 			if (n == 0)
-				res = 0;
+				return (0);
 			else
-				res = fibonacci(n - 1) + fibonacci(n -2);
+				return (fibonacci(n - 1) + fibonacci(n -2));
 	}
-	return (res);
 }
 int fibonacci_start_1_2(int n1)
 {
