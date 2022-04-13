@@ -18,7 +18,7 @@ int fibonacci(int n)
 		else
 			return (fibonacci(n - 1) + fibonacci(n -2));
 }
-int fibonacci_start_1_2(int n1)
+/*int fibonacci_start_1_2(int n1)
 {
 	int i;
 	i = n1 / 10;
@@ -31,14 +31,14 @@ int fibonacci_start_1_2(int n1)
 		return (n1);
 	else
 		return (0);
-}
+}*/
 int main(void)
 {
-	int i = 1, j = 1;
+	int i = 1;
 
 	while (i <= 50)
 	{
-		if (fibonacci_start_1_2(fibonacci(j)) != 0)
+		/*if (fibonacci_start_1_2(fibonacci(j)) != 0)
 		{
 			printf("%d", fibonacci_start_1_2(fibonacci(j)));
 			j++;
@@ -49,7 +49,9 @@ int main(void)
 			}
 		}
 		else
-			j++;
+			j++;*/
+		printf("%d, ", fibonacci(i));
+		i++;
 	}
 	return (0);
 }
