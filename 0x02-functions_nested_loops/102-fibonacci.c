@@ -24,8 +24,11 @@ int main(void)
 
 	while (i <= 50)
 	{
-		printf("%d, ", fibonacci(i));
+		printf("%d", fibonacci(i));
+		if (i != 50)
+			printf(", ");
 		i++;
+		printf("gfghfg");
 	}
 	return (0);
 }
