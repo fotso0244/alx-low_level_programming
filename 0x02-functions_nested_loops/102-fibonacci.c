@@ -29,7 +29,9 @@ int fibonacci_start_1_2(int n)
 	i = n / 10;
 
 	while (i >= 10)
+	{
 		i = i / 10;
+	}
 	if ((i == 1) || (i == 2))
 		res = n;
 	else
