@@ -23,10 +23,10 @@ int fibonacci(int n)
 	}
 	return (res);
 }
-int fibonacci_start_1_2(int n)
+int fibonacci_start_1_2(int n1)
 {
 	int i, res;
-	i = n / 10;
+	i = n1 / 10;
 
 	while (i >= 10)
 	{
