@@ -20,7 +20,7 @@ int fibonacci_start_1_2(int n)
 			else
 				res = fibonacci_start_1_2(n - 1) + fibonacci_start_1_2(n -2);
 	}
-	i = res / 10
+	i = res / 10;
 	while (i > 10)
 		i = i / 10;
 	if ((i == 1) || (i == 2))
