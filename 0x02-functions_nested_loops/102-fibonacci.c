@@ -1,10 +1,5 @@
 #include <stdio.h>
 /**
- * main - prints 50 fist fibonacci numbers beginning
- * 
- * Return: 0
- */
-/**
  * fibonacci - computes 50 first fibonacci numbers
  * @n: fibonacci number
  *
