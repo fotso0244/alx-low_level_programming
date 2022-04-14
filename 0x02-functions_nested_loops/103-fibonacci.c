@@ -19,7 +19,7 @@ int fibonacci(int n)
  */
 int main(void)
 {
-	int i, sum = 0, j = 2;
+	int sum = 0, j = 2;
 
 	while (fibonacci(j) <= 4000000)
 	{
