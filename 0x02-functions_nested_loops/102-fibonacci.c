@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * fibonacci - computes 50 first fibonacci numbers
+ * fibonacci - computes fibonacci numbers
  * @n: fibonacci number
  *
  * Return: fibonacci(n)
@@ -13,7 +13,7 @@ int fibonacci(int n)
 	return (fibonacci(n - 1) + fibonacci(n - 2));
 }
 /**
- * main - computes fibonacci numbers
+ * main - computes 50 first fibonacci numbers
  *
  * Return: 0
  */

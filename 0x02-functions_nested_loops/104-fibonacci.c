@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * fibonacci - computes 50 first fibonacci numbers
+ * fibonacci - computes fibonacci numbers
  * @n: fibonacci number
  *
  * Return: fibonacci(n)
@@ -13,7 +13,7 @@ int fibonacci(int n)
 	return (fibonacci(n - 1) + fibonacci(n - 2));
 }
 /**
- * main - computes fibonacci numbers
+ * main - computes 98 first fibonacci numbers
  *
  * Return: 0
  */
@@ -24,7 +24,7 @@ int main(void)
 	for (i = 1; i <= 98; i++)
 	{
 		printf("%d", fibonacci(i));
-		if (i != 50)
+		if (i != 98)
 			printf(", ");
 	}
 	printf("\n");
