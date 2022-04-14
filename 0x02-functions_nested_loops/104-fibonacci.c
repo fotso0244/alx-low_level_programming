@@ -5,7 +5,7 @@
  *
  * Return: fibonacci(n)
  */
-int fibonacci(int n)
+long long int fibonacci(int n)
 {
 
 	if (n <= 1)
@@ -23,7 +23,7 @@ int main(void)
 
 	for (i = 1; i <= 98; i++)
 	{
-		printf("%d", fibonacci(i));
+		printf("%lld", fibonacci(i));
 		if (i != 98)
 			printf(", ");
 	}

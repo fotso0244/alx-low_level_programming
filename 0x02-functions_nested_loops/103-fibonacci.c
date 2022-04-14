@@ -5,7 +5,7 @@
  *
  * Return: fibonacci(n)
  */
-int fibonacci(int n)
+long long int fibonacci(int n)
 {
 
 	if (n <= 1)
@@ -19,7 +19,7 @@ int fibonacci(int n)
  */
 int main(void)
 {
-	int sum = 0, j = 2;
+	long long int sum = 0, j = 2;
 
 	while (fibonacci(j) <= 4000000)
 	{
@@ -29,6 +29,6 @@ int main(void)
 			j++;
 		}
 	}
-	printf("%d\n", sum);
+	printf("%lld\n", sum);
 	return (0);
 }
