@@ -14,3 +14,4 @@ Function 100-times_table.c prints n times table
 Function 101-natural.c prints sum of multiples of 3 and 5 below an integer
 Function 102-fibonacci.c prints 50 first fibonacci numbers beginning by 1 and 2
 Function 104-fibonacci.c prints 98 first fibonacci numbers
+Code 103-fibonacci.c prints sum of even-valued fibonacci numbers under 4000000
