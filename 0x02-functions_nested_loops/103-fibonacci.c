@@ -29,6 +29,6 @@ int main(void)
 			j++;
 		}
 	}
-	printf("\n");
+	printf("%d\n", sum);
 	return (0);
 }
