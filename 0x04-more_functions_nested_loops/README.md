@@ -5,3 +5,4 @@ Code 3-print_numbers prints numbers between 0 and 9
 Code 4-print_most_numbers print numbers between 0 and 9, excep 2 and 4
 Code 5-more_numbers prints numbers between 0 and 14, 10 times
 Code 6-print_line.c prints _ n times
+Code 7-print_diagonal prints \ n times
