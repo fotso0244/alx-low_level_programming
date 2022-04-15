@@ -17,5 +17,6 @@ int main(void)
 		while ((a % c != 0) && (a != 1))
 			c++;
 	}
+	printf("%ld", c);
 	return (0);
 }
