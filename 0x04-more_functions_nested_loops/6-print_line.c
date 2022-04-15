@@ -3,7 +3,7 @@
  * print_line - prints charcter _ n times
  * @n: number of times
  */
-void print_line(n)
+void print_line(int n)
 {
 	int i = n;
 
