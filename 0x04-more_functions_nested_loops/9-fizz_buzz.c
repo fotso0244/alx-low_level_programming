@@ -4,7 +4,7 @@
  */
 int main(void)
 {
-	int i, j;
+	int i;
 
 	for (i = 1; i <= 100; i++)
 	{
@@ -36,7 +36,16 @@ int main(void)
 					_putchar('z');
 					_putchar('z');
 				}
+				else
+				{
+					if (i / 10 != 0)
+						_putchar((i / 10) + '0');
+					_putchar((i % 10) + '0');
+				}
+		if (i != 100)
+			_putchar(' ');
 	}
+	_putchar('\n');
 	return (0);
 }
 
