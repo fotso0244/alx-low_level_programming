@@ -51,6 +51,12 @@ void print_number(int n)
 			if (b >= 1)
 			{
 				a = c % (puiss(10, b));
+				if (a == 0)
+				{
+					for (e = 1; e <= b; e++)
+						_putchar('0');
+					break;
+				}
 				c = a;
 				b = 0;
 				e = 0;
