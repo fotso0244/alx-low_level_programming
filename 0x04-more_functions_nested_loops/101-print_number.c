@@ -1,18 +1,13 @@
 #include "main.h"
 /**
- * puiss - computes power 10
- * @a: base
- * @b: power
- *
- * Return: a power b
+ * print_last0 - prints last 0
  */
-int puiss(int a, int b)
+void print_last0(int a)
 {
-	int i, res = 1;
+	int i;
 
-	for (i = 1; i <= b; i++)
-		res *= a;
-	return (res);
+	for (i = 1; i <= a; i++)
+		_putchar('0');
 }
 /**
  * print_number - print an integer
@@ -53,8 +48,7 @@ void print_number(int n)
 				a = c % (puiss(10, b));
 				if (a == 0)
 				{
-					for (e = 1; e <= b; e++)
-						_putchar('0');
+					print_last0(b);
 					break;
 				}
 				c = a;
