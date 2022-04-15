@@ -43,7 +43,7 @@ void print_number(int n)
 			if (a / 10 != 0)
 				_putchar((a / 10) + '0');
 			_putchar((a % 10) + '0');
-			if (e < b)
+			if (0 < e < b)
 				for (l = 1; l <= b - e; l++)
 					_putchar('0');
 			if (b == 0)
