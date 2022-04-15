@@ -7,7 +7,7 @@
 int main(void)
 {
 	const long int i = 612852475143;
-	int a = i, c = 2;
+	long int a = i, c = 2;
 
 	while ((a % c != 0) && (a != 1))
 		c++;
@@ -17,6 +17,6 @@ int main(void)
 		while ((a % c != 0) && (a != 1))
 			c++;
 	}
-	printf("%d", c);
+	printf("%ld\n", c);
 	return (0);
 }
