@@ -3,7 +3,7 @@
  * print_triangle - prints triangle
  * @size: size of triangle
  */
-void print_diagonal(int n)
+void print_triangle(int n)
 {
 	int j, k, l = n;
 
