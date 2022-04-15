@@ -41,7 +41,7 @@ void print_number(int n)
 				_putchar((a / 10) + '0');
 			_putchar((a % 10) + '0');
 			if ((c / 10) % 10 == 0)
-				for (l = 1; l <= b-1; l++)
+				for (l = 1; l <= b - 1; l++)
 					_putchar('0');
 			if (b == 0)
 				break;
