@@ -1,7 +1,27 @@
 #include "main.h"
 /**
  * main - fizz buzz program
+ *
+ * Return: Always 0
  */
+void print_fizz(void)
+{
+	_putchar('F');
+	_putchar('i');
+	_putchar('z');
+	_putchar('z');
+}
+void print_buzz(void)
+{
+	_putchar('B');
+	_putchar('u');
+	_putchar('z');
+	_putchar('z');
+}
+void print_fizz_buzz(void)
+{
+	print_fizz();
+	print_buzz();
 int main(void)
 {
 	int i;
@@ -10,31 +30,18 @@ int main(void)
 	{
 		if ((i % 3 == 0) && (i % 5 == 0))
 		{
-			_putchar('F');
-			_putchar('i');
-			_putchar('z');
-			_putchar('z');
-			_putchar('B');
-			_putchar('u');
-			_putchar('z');
-			_putchar('z');
+			print_fizz_buzz();
 		}
 		else
 			if (i % 3 == 0)
 			{
-				_putchar('F');
-				_putchar('i');
-				_putchar('z');
-				_putchar('z');
+				print_fizz();
 			}
 			else
 				if (i % 5 == 0)
 				{
 
-					_putchar('B');
-					_putchar('u');
-					_putchar('z');
-					_putchar('z');
+					print_buzz();
 				}
 				else
 				{
