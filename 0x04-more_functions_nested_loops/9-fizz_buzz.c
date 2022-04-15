@@ -1,32 +1,4 @@
-#include "main.h"
-/**
- * print_fizz - fizz program
-*/
-void print_fizz(void)
-{
-	_putchar('F');
-	_putchar('i');
-	_putchar('z');
-	_putchar('z');
-}
-/**
- * print_buzz - buzz program
- */
-void print_buzz(void)
-{
-	_putchar('B');
-	_putchar('u');
-	_putchar('z');
-	_putchar('z');
-}
-/**
- * print_fizz_buzz - fizz buzz program
- */
-void print_fizz_buzz(void)
-{
-	print_fizz();
-	print_buzz();
-}
+#include <stdio.h>
 /**
  * main - print numbers between 1 and 100
  *
@@ -43,29 +15,27 @@ int main(void)
 	{
 		if ((i % 3 == 0) && (i % 5 == 0))
 		{
-			print_fizz_buzz();
+			printf("FizzBuzz");;
 		}
 		else
 			if (i % 3 == 0)
 			{
-				print_fizz();
+				printf("Fizz");
 			}
 			else
 				if (i % 5 == 0)
 				{
 
-					print_buzz();
+					printf("Buzz");
 				}
 				else
 				{
-					if (i / 10 != 0)
-						_putchar((i / 10) + '0');
-					_putchar((i % 10) + '0');
+					printf("%d", i);
 				}
 		if (i != 100)
-			_putchar(' ');
+			printf(' ');
 	}
-	_putchar('\n');
+	printf("\n");
 	return (0);
 }
 
