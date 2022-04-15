@@ -10,10 +10,10 @@ void print_line(int n)
 	if (n <= 0)
 		_putchar('\n');
 	else
-		for (j = 0; j <= n-1; j++)
+		for (j = 0; j <= n - 1; j++)
 		{
 			_putchar(95);
-			if (j == n-1)
+			if (j == n - 1)
 				_putchar('\n');
 		}
 }
