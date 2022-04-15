@@ -37,5 +37,6 @@ int main(void)
 					_putchar('z');
 				}
 	}
+	return (0);
 }
 
