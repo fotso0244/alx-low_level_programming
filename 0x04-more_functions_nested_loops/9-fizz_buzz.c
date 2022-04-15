@@ -1,9 +1,7 @@
 #include "main.h"
 /**
- * main - fizz buzz program
- *
- * Return: Always 0
- */
+ * print_fizz - fizz program
+*/
 void print_fizz(void)
 {
 	_putchar('F');
@@ -11,6 +9,9 @@ void print_fizz(void)
 	_putchar('z');
 	_putchar('z');
 }
+/**
+ * print_buzz - buzz program
+ */
 void print_buzz(void)
 {
 	_putchar('B');
@@ -18,10 +19,22 @@ void print_buzz(void)
 	_putchar('z');
 	_putchar('z');
 }
+/**
+ * print_fizz_buzz - fizz buzz program
+ */
 void print_fizz_buzz(void)
 {
 	print_fizz();
 	print_buzz();
+}
+/**
+ * main - print numbers between 1 and 100
+ *
+ * Replace multiples of 3 by fizz
+ * Replace multiples of 5 by buzz
+ * Replace multiples of 3 and 5 by FizzBuzz
+ * Return: Always 0
+ */
 int main(void)
 {
 	int i;
@@ -33,7 +46,7 @@ int main(void)
 			print_fizz_buzz();
 		}
 		else
-			if (i % 3 == 0)
+			 if (i % 3 == 0)
 			{
 				print_fizz();
 			}
