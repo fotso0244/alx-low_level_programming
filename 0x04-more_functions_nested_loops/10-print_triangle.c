@@ -5,12 +5,12 @@
  */
 void print_triangle(int size)
 {
-	int j, k, l = n;
+	int j, k, l = size;
 
-	if (n <= 0)
+	if (size <= 0)
 		_putchar('\n');
 	else
-		for (j = 0; j <= n - 1; j++)
+		for (j = 0; j <= size - 1; j++)
 		{
 			for (k = 1; k <= l - 1; k++)
 				_putchar(' ');
