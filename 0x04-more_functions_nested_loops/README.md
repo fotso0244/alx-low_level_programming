@@ -9,3 +9,4 @@ Code 7-print_diagonal prints \ n times
 Code 8-print_square.c prints character # n times
 Code 9-fizz_buzz.c runs fizz buzz
 Code 10-print_triangle.c prints triangle
+How to print largest prime factor of 612852475143
