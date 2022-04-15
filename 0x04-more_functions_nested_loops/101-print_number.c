@@ -10,6 +10,20 @@ void print_last0(int a)
 		_putchar('0');
 }
 /**
+ * puiss - power 10
+ * @a: base
+ * @b: power
+ *
+ * Return: a power b
+ */
+int puiss(int a, int b)
+{
+	int i, res = 1;
+	for (i = 1; i <= b; i++)
+		res *= a;
+	return (res);
+}
+/**
  * print_number - print an integer
  * @n: number to print
  */
