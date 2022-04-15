@@ -19,7 +19,7 @@ int puiss(int a, int b)
  */
 void print_number(int n)
 {
-	int a = n, b = 0, c = n, l;
+	int a = n, b = 0, c = n, l, e;
 
 	if (a < 0)
 	{
@@ -33,6 +33,8 @@ void print_number(int n)
 		{
 			b++;
 			a /= 10;
+			if ((a / 10) % 10 == 0)
+				e = b;
 		}
 
 		if (a / 10 < 10)
@@ -41,7 +43,7 @@ void print_number(int n)
 				_putchar((a / 10) + '0');
 			_putchar((a % 10) + '0');
 			if ((c / 10) % 10 == 0)
-				for (l = 1; l <= b - 1; l++)
+				for (l = 1; l <= b - e; l++)
 					_putchar('0');
 			if (b == 0)
 				break;
