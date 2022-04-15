@@ -3,7 +3,7 @@
  * print_diagonal - prints charcter \ n times
  * @n: number of times
  */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	int j;
 
@@ -12,7 +12,7 @@ void print_line(int n)
 	else
 		for (j = 0; j <= n - 1; j++)
 		{
-			_putchar('\');
+			_putchar(92);
 			if (j == n - 1)
 				_putchar('\n');
 		}
