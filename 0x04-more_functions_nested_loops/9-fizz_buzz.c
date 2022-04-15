@@ -46,7 +46,7 @@ int main(void)
 			print_fizz_buzz();
 		}
 		else
-			 if (i % 3 == 0)
+			if (i % 3 == 0)
 			{
 				print_fizz();
 			}
