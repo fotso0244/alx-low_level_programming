@@ -9,7 +9,7 @@ void puts2(char *str)
 	int i = 0;
 
 	_putchar(str[i]);
-	if ((int)strlen(str) >= 3)
+	if (str != "")
 		while (i <= (int)strlen(str) - 3)
 		{
 			i = i + 2;
