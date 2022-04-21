@@ -8,7 +8,7 @@ void puts2(char *str)
 {
 	int i = 0;
 
-	if (strcmp(str,"") != 0)
+	if (strcmp(str, "") != 0)
 	{
 		_putchar(str[i]);
 		while (i <= (int)strlen(str) - 3)
