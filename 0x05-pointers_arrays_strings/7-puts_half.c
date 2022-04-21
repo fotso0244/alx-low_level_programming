@@ -6,17 +6,19 @@
  */
 void puts_half(char *str)
 {
-	int i = 0;
+	int i = strlen(str) / 2;
 
 	if (strcmp(str, "") != 0)
 	{
-		while (i <= (int)(strlen(str) / 2) - 1)
+		if (strlen(str) % 2 != 0)
+			i = ((int)strlen(str) - 1) / 2;
+		else
+			i = (int)strlen(str) / 2;
+		while (i <= (int)strlen(str) - 1)
 		{
 			_putchar(str[i]);
 			i++;
 		}
-		if (strlen(str) % 2 != 0)
-			_putchar(str[i + 1]);
 	}
 	_putchar('\n');
 }
