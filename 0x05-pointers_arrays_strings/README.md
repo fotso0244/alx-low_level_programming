@@ -6,3 +6,4 @@ Code 4-print_rev.c prints a string in reverse
 Code 6-puts2.c prints other character of a string
  Code 7-puts_half.c returns half of a string
 Code 8-print_array.c prints elements of an array
+Code 9-strcpy.c copy string
