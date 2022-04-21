@@ -11,7 +11,7 @@ void puts_half(char *str)
 	if (strcmp(str, "") != 0)
 	{
 		if (strlen(str) % 2 != 0)
-			i = ((int)strlen(str) - 1) / 2;
+			i = (((int)strlen(str) - 1) / 2) + 1;
 		else
 			i = (int)strlen(str) / 2;
 		while (i <= (int)strlen(str) - 1)
