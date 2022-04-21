@@ -11,7 +11,7 @@ void rev_string(char *s)
 
 	while (i >= 0)
 	{
-		strcat(revstr,s[i]);
+		*s = strcat(revstr,s[i]);
 		i--;
 	}
 }
