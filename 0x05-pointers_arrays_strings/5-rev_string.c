@@ -6,11 +6,12 @@
  */
 void rev_string(char *s)
 {
-	int i = strlen(s) - 1;
+	int i;
 
-	for (i = 0; i <= strlen(s) -1; i++)
+	for (i = 0; i <= (int)strlen(s) -1; i++)
 		_putchar(s[i]);
 	_putchar('\n');
+	i = (int)strlen(s) - 1;
 	while (i >= 0)
 	{
 		_putchar(s[i]);
