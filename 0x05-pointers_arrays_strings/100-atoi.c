@@ -38,7 +38,7 @@ int char2int(char asc)
 {
 	int res;
 
-	switch(asc)
+	switch (asc)
 	{
 		case '0':
 			res = 0;
@@ -83,7 +83,7 @@ int char2int(char asc)
 int puiss(int a, int b)
 {
 	int res = 1, i;
-	
+
 	for (i = 1; i <= b; i++)
 		res *= a;
 	return (res);
@@ -107,17 +107,17 @@ int _atoi(char *s)
 		if (('0' <= s[i]) && (s[i] <= '9'))
 		{
 			j = char2int(s[i]);
-			j *= puiss(10,(sizeFirst - 1));
+			j *= puiss(10, (sizeFirst - 1));
 			val += j;
 			i++;
 			sizeFirst--;
 			k = 1;
 		}
 		else
-			if (k == 1)
-				break;
-			else
+			if (k == 0)
 				i++;
+			else
+				break;
 	}
 	if (neg > pos)
 		val *= (-1);
