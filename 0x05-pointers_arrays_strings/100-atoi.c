@@ -96,7 +96,7 @@ int puiss(int a, int b)
  */
 int _atoi(char *s)
 {
-	long int val = 0, i = 0, sizeFirst = sizeFirstInt(s), j, k = 0, pos = 0, neg = 0;
+	int val = 0, i = 0, sizeFirst = sizeFirstInt(s), j, k = 0, pos = 0, neg = 0;
 
 	while (i <= (int)strlen(s) - 1)
 	{
@@ -121,5 +121,5 @@ int _atoi(char *s)
 	}
 	if (neg > pos)
 		val *= (-1);
-	return ((long int)val);
+	return (val);
 }
