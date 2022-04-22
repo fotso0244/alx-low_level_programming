@@ -8,3 +8,4 @@ Code 6-puts2.c prints other character of a string
 Code 8-print_array.c prints elements of an array
 Code 9-strcpy.c copy string
 Code 100-atoi.c converts string to integer
+Code 5-rev_string.c reverses a string
