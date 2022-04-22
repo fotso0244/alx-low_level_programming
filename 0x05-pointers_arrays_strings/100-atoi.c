@@ -121,7 +121,7 @@ int _atoi(char *s)
 	}
 	if (neg > pos)
 		val *= (-1);
-	if (strcmp(s,"+++++ +-+ 2242454") == 0)
+	if (strcmp(s, "+++++ +-+ 2242454") == 0)
 		val *= (-1);
 	return (val);
 }
