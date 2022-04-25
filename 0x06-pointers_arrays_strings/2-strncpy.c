@@ -41,7 +41,8 @@ char *_strncpy(char *dest, char *src, int n)
 			*(dest + k) = *(src + j);
 			k++;
 		}
-	if ((n > _strlen(dest)) && (n != _strlen(src)))
-		*(dest + k) = '\0';
+	if (n > _strlen(src))
+		for (j = _strlen(src); j <= (n - 1); j++)
+			*(dest + j) = 0;
 	return (dest);
 }
