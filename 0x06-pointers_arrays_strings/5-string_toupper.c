@@ -6,11 +6,11 @@
  *
  * Return: pointer to string
  */
-char *string_toupper(int *s)
+char *string_toupper(char *s)
 {
 	int j;
 
-	for (j = 0; j <= strlen(s) - 1; j++)
+	for (j = 0; j <= (int)strlen(s) - 1; j++)
 	{
 		if (*(s + j) <= 122 && *(s + j) >= 97)
 			*(s + j) += 32;
