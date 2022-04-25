@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 /**
  * _strlen - computes length of string
  * @s: string
@@ -23,7 +24,7 @@ int _strlen(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-	int k = _strlen(dest), j;
+	int k = _strlen(dest) - 1, j;
 
 	for (j = 0; j <= _strlen(src) - 1; j++)
 	{
@@ -31,7 +32,5 @@ char *_strcat(char *dest, char *src)
 		k++;
 	}
 	k++;
-	*(dest + k) = '\0';
-	/*_putchar('\n');*/
 	return (dest);
 }
