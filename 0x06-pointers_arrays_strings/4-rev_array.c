@@ -1,20 +1,5 @@
 #include "main.h"
 #include <string.h>
-#include <stdio.h>
-/**
- * _strlen - computes length of string
- * @s: string
- *
- * Return: length of a string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*(s + i) != '\0')
-		i++;
-	return (i + 1);
-}
 /**
  * reverse_array - reverses elements of an array
  * @a: array
