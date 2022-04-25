@@ -32,6 +32,6 @@ char *_strcat(char *dest, char *src)
 	}
 	k++;
 	*(dest + k) = '\0';
-	_putchar('\n');
+	/*_putchar('\n');*/
 	return (dest);
 }
