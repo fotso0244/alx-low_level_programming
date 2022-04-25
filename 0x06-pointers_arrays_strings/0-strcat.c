@@ -23,7 +23,7 @@ int _strlen(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-	int i = 0, k = _strlen(dest), j;
+	int k = _strlen(dest), j;
 
 	for (j = 0; j <= _strlen(src) - 1; j++)
 	{
