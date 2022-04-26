@@ -7,3 +7,4 @@ Code 5-string_toupper.c changes lowercase letters to uppercase
 Code 6-cap_string.c capitalizes all words of a string
 Code 100-rot13.c encodes string with rot13
 Code 7-leet.c encode a string into 1337
+Code 101-print_number.c prints an integer using putchar
