@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_last0 - prints last 0
+ * @a: parameter
  */
 void print_last0(int a)
 {
