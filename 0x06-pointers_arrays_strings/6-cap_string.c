@@ -1,10 +1,26 @@
-#include "main.h"
-#include <string.h>
 #include <stdbool.h>
+bool ifsep(char *k)
+{
+	int n = 0;
+	bool sep = false;
+
+	while (n <= (int)strlen(k) - 1)
+	{
+		if (*(k + n) != *(s + j))
+			n++;
+		else
+		{
+			sep = 1;
+			n = 0;
+			break;
+		}
+	}
+	return (sep);
+}
 /**
  * cap_string - capitalizes all words of a string
  * @s: string
- * 
+ *
  * Return: pointer to a string
  */
 char *cap_string(char *s)
@@ -15,17 +31,7 @@ char *cap_string(char *s)
 
 	while (j <= (int)strlen(s) - 1)
 	{
-		while (n <= (int)strlen(k) - 1)
-		{
-			if (*(k + n) != *(s + j))
-				n++;
-			else
-			{
-				sep = 1;
-				n = 0;
-				break;
-			}
-		}
+		sep = ifsep(k);
 		if (!sep)
 		{
 			if (*(s + j) <= 122 && *(s + j) >= 97 && !start)
