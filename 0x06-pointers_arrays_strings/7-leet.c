@@ -8,8 +8,7 @@
 char *leet(char *s)
 {
 	int i, j = 0;
-	char *str1 = "aAeEoOtTlL";
-	char *str2 = "4433007711";
+	char *str1 = "aAeEoOtTlL", *str2 = "4433007711";
 
 	for (i = 0; i <= (int)strlen(s) - 1; i++)
 	{
