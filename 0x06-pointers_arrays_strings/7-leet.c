@@ -7,10 +7,10 @@
  */
 char *leet(char *s)
 {
-	int i, j = 0;
+	int i = 0, j = 0;
 	char *str1 = "aAeEoOtTlL", *str2 = "4433007711";
 
-	for (i = 0; i <= (int)strlen(s) - 1; i++)
+	while (i <= (int)strlen(s) - 1)
 	{
 		while (j <= (int)strlen(str1) - 1)
 		{
@@ -24,6 +24,7 @@ char *leet(char *s)
 			}
 		}
 		j = 0;
+		i++;
 	}
 	return (s);
 }
