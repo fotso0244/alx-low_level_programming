@@ -34,7 +34,7 @@ char *shift(char *s)
 	int i;
 	char res[100];
 
-	for (i = 0; i <= strlen(s) - 1; i++)
+	for (i = 0; i <= (int)strlen(s) - 1; i++)
 		res[i] = s[i + 1];
 	return (res);
 }
