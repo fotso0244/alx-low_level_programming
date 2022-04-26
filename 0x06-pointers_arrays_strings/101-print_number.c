@@ -19,6 +19,7 @@ void print_last0(int a)
 int puiss(int a, int b)
 {
 	int i, res = 1;
+
 	for (i = 1; i <= b; i++)
 		res *= a;
 	return (res);
@@ -46,7 +47,6 @@ void print_number(int n)
 				e = b;
 			a /= 10;
 		}
-
 		if (a / 10 < 10)
 		{
 			if (a / 10 != 0)
