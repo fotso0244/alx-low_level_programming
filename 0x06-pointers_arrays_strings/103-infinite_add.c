@@ -36,7 +36,8 @@ char *shift(char *s)
 
 	for (i = 0; i <= (int)strlen(s) - 1; i++)
 		res[i] = s[i + 1];
-	return (res);
+	s = res;
+	return (s);
 }
 /**
  * infinite_add - add 2 numbers
