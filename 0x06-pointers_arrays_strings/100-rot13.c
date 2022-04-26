@@ -11,9 +11,9 @@ char *rot13(char *s)
 	char *str1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *str2 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; i <= (int)strlen(s)-1; i++)
+	for (i = 0; i <= (int)strlen(s) - 1; i++)
 	{
-		while (j <= (int)strlen(str1) -1)
+		while (j <= (int)strlen(str1) - 1)
 		{
 			if (*(str1 + j) != *(s + i))
 				j++;
