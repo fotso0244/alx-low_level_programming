@@ -24,6 +24,21 @@ char *complete(char *n1, char *n2)
 	return (n2);
 }
 /**
+ * shift - shift string
+ * @s: string
+ *
+ * Return: pointer to char
+ */
+char *shift(char *s)
+{
+	int i;
+	char res[100];
+
+	for (i = 0; i <= strlen(s) - 1; i++)
+		res[i] = s[i + 1];
+	return (res);
+}
+/**
  * infinite_add - add 2 numbers
  * @n1: first number
  * @n2: second number
@@ -61,7 +76,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 				r = res;
 			}
 			else
-				r = res;
+			{
+				r = shift(res);
+			}
 	}
 	return (r);
 }
