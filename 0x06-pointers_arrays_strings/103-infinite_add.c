@@ -104,7 +104,6 @@ char *treat(int k, int size_r, int i, int ret, char *res)
 	{
 		r = shift(res);
 	}
-	printf("%s\n", res);
 	return (r);
 }
 /**
