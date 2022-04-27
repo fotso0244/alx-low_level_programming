@@ -102,8 +102,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			n3 = complete(n2, n1);
 			n1 = n3;
 		}
-		else
-			n3 = n2;
 	printf("%s\n", n3);
 	for (i = (int)strlen(n1) - 1; i >= 0;  i--)
 	{
