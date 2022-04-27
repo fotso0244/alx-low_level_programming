@@ -15,7 +15,6 @@ char *complete(char *n1, char *n2)
 	for (i = 0; i <= diff - 1; i++)
 		*(n4 + i) = 48;
 	*(n4 + i) = '\0';
-	printf("%s\n", n4);
 	for (i = diff; i <= (int)strlen(n1) - 1; i++)
 	{
 		n4[i] = (int) n2[j];
@@ -45,7 +44,6 @@ char *remov0(char *s, int k)
 	}
 	res[j] = '\0';
 	s = res;
-	printf("%s\n", s);
 	return (s);
 }
 /**
@@ -94,16 +92,23 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	char *n3, res[100];
 
 	if (strlen(n1) > strlen(n2))
+	{
 		n3 = complete(n1, n2);
+		n2 = n3;
+	}
 	else
 		if (strlen(n2) > strlen(n1))
+		{
 			n3 = complete(n2, n1);
+			n1 = n3;
+		}
 		else
 			n3 = n2;
+	printf("%s\n", n3);
 	for (i = (int)strlen(n1) - 1; i >= 0;  i--)
 	{
-		res[i + 1] = (((int)n1[i] + (int)n3[i] + ret - 96) % 10) + 48;
-		ret = ((int)n1[i] + (int)n3[i] + ret - 96) / 10;
+		res[i + 1] = (((int)n1[i] + (int)n2[i] + ret - 96) % 10) + 48;
+		ret = ((int)n1[i] + (int)n2[i] + ret - 96) / 10;
 		k++;
 		if (k == size_r - 1 && (i != 0 || ret != 0))
 		{
