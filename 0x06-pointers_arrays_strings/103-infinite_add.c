@@ -77,6 +77,28 @@ char *shift(char *s)
 	}
 	return (s);
 }
+char *treat(int k, int size_r, int i, int ret, char *res)
+{
+	char *r;
+
+	
+	if (k == size_r - 1 && (i != 0 || ret != 0))
+	{
+		r = 0;
+	}
+	if (ret != 0 && i == 0 && k != size_r - 1)
+	{
+		res[0] = ret + 48;
+		res[(int)strlen(res) + 1] = '\0';
+		r = res;
+	}
+	if (ret == 0 && i == 0 && k != size_r - 1)
+	{
+		res[(int)strlen(res) + 1] = '\0';
+		r = shift(res);
+	}
+	return (r);
+}
 /**
  * infinite_add - add 2 numbers
  * @n1: first number
@@ -114,20 +136,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		k++;
 		if (k == size_r - 1 && (i != 0 || ret != 0))
 		{
-			r = 0;
 			break;
 		}
-		if (ret != 0 && i == 0 && k != size_r - 1)
-		{
-			res[0] = ret + 48;
-			res[(int)strlen(n3) + 1] = '\0';
-			r = res;
-		}
-		if (ret == 0 && i == 0 && k != size_r - 1)
-		{
-			res[(int)strlen(n3) + 1] = '\0';
-			r = shift(res);
-		}
 	}
+		r = treat(k, size_r, i + 1, ret, res);
 	return (r);
 }
