@@ -65,7 +65,7 @@ char *shift(char *s)
 	{
 		k = 0;
 		for (i = 0; i <= (int)strlen(s) - 1; i++)
-			if (s[i] == 48 && s[(int)strlen(s) - 1] != 48)
+			if (s[i] == 48 && i != (int)strlen(s) - 1)
 				k++;
 			else
 				break;
