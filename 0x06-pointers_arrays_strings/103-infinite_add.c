@@ -9,7 +9,7 @@
  */
 char *complete(char *n1, char *n2)
 {
-	int i, j = 0, diff = (int)strlen(n1) -(int)strlen(n2);
+	int i, j = 0, diff = (int)strlen(n1) - (int)strlen(n2);
 	char n4[200];
 
 	for (i = 0; i <= diff - 1; i++)
