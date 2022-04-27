@@ -77,11 +77,20 @@ char *shift(char *s)
 	}
 	return (s);
 }
+/**
+ * treat - process a string
+ * @k: int
+ * @size_r: int
+ * @i: int
+ * @ret: sint
+ * @res: string
+ *
+ * Return: pointer to char
+ */
 char *treat(int k, int size_r, int i, int ret, char *res)
 {
 	char *r;
 
-	
 	if (k == size_r - 1 && (i != 0 || ret != 0))
 	{
 		r = 0;
