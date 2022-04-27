@@ -89,24 +89,28 @@ char *shift(char *s)
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i, ret = 0, k = 0;
-	char *n3, res[100];
+	char *n3, res[100], *n4;
 
 	if (strlen(n1) > strlen(n2))
 	{
 		n3 = complete(n1, n2);
-		n2 = n3;
+		n4 = n1;
 	}
 	else
 		if (strlen(n2) > strlen(n1))
 		{
 			n3 = complete(n2, n1);
-			n1 = n3;
+			n4 = n2;
 		}
-	printf("%s\n", n3);
-	for (i = (int)strlen(n1) - 1; i >= 0;  i--)
+		else
+		{
+			n3 = n1;
+			n4 = n2;
+		}
+	for (i = (int)strlen(n3) - 1; i >= 0;  i--)
 	{
-		res[i + 1] = (((int)n1[i] + (int)n2[i] + ret - 96) % 10) + 48;
-		ret = ((int)n1[i] + (int)n2[i] + ret - 96) / 10;
+		res[i + 1] = (((int)n3[i] + (int)n4[i] + ret - 96) % 10) + 48;
+		ret = ((int)n3[i] + (int)n4[i] + ret - 96) / 10;
 		k++;
 		if (k == size_r - 1 && (i != 0 || ret != 0))
 		{
@@ -116,12 +120,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (ret != 0 && i == 0 && k != size_r - 1)
 		{
 			res[0] = ret + 48;
-			res[(int)strlen(n1) + 1] = '\0';
+			res[(int)strlen(n3) + 1] = '\0';
 			r = res;
 		}
 		if (ret == 0 && i == 0 && k != size_r - 1)
 		{
-			res[(int)strlen(n1) + 1] = '\0';
+			res[(int)strlen(n3) + 1] = '\0';
 			r = shift(res);
 		}
 	}
