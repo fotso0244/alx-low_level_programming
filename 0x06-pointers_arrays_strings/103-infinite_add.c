@@ -98,14 +98,13 @@ char *treat(int k, int size_r, int i, int ret, char *res)
 	if (ret != 0 && i == 0 && k != size_r - 1)
 	{
 		res[0] = ret + 48;
-		res[(int)strlen(res) + 1] = '\0';
 		r = res;
 	}
 	if (ret == 0 && i == 0 && k != size_r - 1)
 	{
-		res[(int)strlen(res) + 1] = '\0';
 		r = shift(res);
 	}
+	printf("%s\n", res);
 	return (r);
 }
 /**
@@ -148,6 +147,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			break;
 		}
 	}
+	res[(int)strlen(n3) + 1] = '\0';
 		r = treat(k, size_r, i + 1, ret, res);
 	return (r);
 }
