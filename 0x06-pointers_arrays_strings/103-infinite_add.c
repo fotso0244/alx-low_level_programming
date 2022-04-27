@@ -9,19 +9,44 @@
  */
 char *complete(char *n1, char *n2)
 {
-	int i, j = 0, diff;
-	char n3[200];
+	int i, j = 0, diff = (int)strlen(n1) -(int)strlen(n2);
+	char n4[200];
 
-	for (i = 0; i <= ((int)strlen(n1) - (int)strlen(n2)) - 1; i++)
-		*(n3 + i) = 48;
-	diff = (int)strlen(n1) - (int)strlen(n2);
+	for (i = 0; i <= diff - 1; i++)
+		*(n4 + i) = 48;
+	*(n4 + i) = '\0';
+	printf("%s\n", n4);
 	for (i = diff; i <= (int)strlen(n1) - 1; i++)
 	{
-		n3[i] = (int) n2[j];
+		n4[i] = (int) n2[j];
 		j++;
 	}
-	n2 = n3;
+	*(n4 + i) = '\0';
+	n2 = n4;
 	return (n2);
+}
+
+/**
+ * remov0 - removes unsigificatives 0
+ * @s: number
+ * @k: number of 0
+ *
+ * Return: pointer to char
+ */
+char *remov0(char *s, int k)
+{
+	int i, j = 0;
+	char res[100];
+
+	for (i = k; i <= (int)strlen(s) - 1; i++)
+	{
+		res[j] = s[i];
+		j++;
+	}
+	res[j] = '\0';
+	s = res;
+	printf("%s\n", s);
+	return (s);
 }
 /**
  * shift - shift string
@@ -31,12 +56,27 @@ char *complete(char *n1, char *n2)
  */
 char *shift(char *s)
 {
-	int i;
-	char res[100];
+	int i, k = 0;
+	char res[100], *r;
 
-	for (i = 0; i <= (int)strlen(s) - 1; i++)
+	for (i = 0; i <= (int)strlen(s) - 2; i++)
 		res[i] = s[i + 1];
+	res[i] = '\0';
 	s = res;
+	if (s != 0)
+	{
+		k = 0;
+		for (i = 0; i <= (int)strlen(s) - 1; i++)
+			if (s[i] == 48)
+				k++;
+			else
+				break;
+		if (k != 0)
+		{
+			r = remov0(s, k);
+			s = r;
+		}
+	}
 	return (s);
 }
 /**
@@ -70,16 +110,17 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			r = 0;
 			break;
 		}
-		else
-			if (ret != 0 && i == 0)
-			{
-				res[0] = ret + 48;
-				r = res;
-			}
-			else
-			{
-				r = shift(res);
-			}
+		if (ret != 0 && i == 0 && k != size_r - 1)
+		{
+			res[0] = ret + 48;
+			res[(int)strlen(n1) + 1] = '\0';
+			r = res;
+		}
+		if (ret == 0 && i == 0 && k != size_r - 1)
+		{
+			res[(int)strlen(n1) + 1] = '\0';
+			r = shift(res);
+		}
 	}
 	return (r);
 }
