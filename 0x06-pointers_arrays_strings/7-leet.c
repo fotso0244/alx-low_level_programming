@@ -16,12 +16,12 @@ char *leet(char *s)
 		{
 			if (*(str1 + j) != *(s + i))
 				j++;
-			else
+			/*else
 			{
 				*(s + i) = *(str2 + j);
 				j = 0;
 				break;
-			}
+			}*/
 		}
 		j = 0;
 		i++;
