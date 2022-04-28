@@ -30,14 +30,23 @@ void printspace(int size, int i, int j)
 /**
  * print - print character
  * @c: character
+ * @sta: int
  */
-void print(char c)
+void print(char c, int sta)
 {
 
-	if (isprint(c) != 0)
-		printf("%x", c);
+	if (sta == 0)
+	{
+		if (isprint(c) != 0)
+			printf("%x ", c);
+		else
+			printf("0%x ", c);
+	}
 	else
-		printf("0%x", c);
+		if (isprint(c) != 0)
+			printf("%x", c);
+		else
+			printf("0%x", c);
 }
 /**
  * print_buffer - print size bytes of buffer
@@ -60,12 +69,12 @@ void print_buffer(char *b, int size)
 			}
 			while ((j <= i + 8) && (j <= size - 2))
 			{
-				print(b[j]);
-				print(b[j + 1]);
+				print(b[j], 1);
+				print(b[j + 1], 0);
 				j += 2;
 			}
 			if (size % 2 != 0 && j == size - 1 && (j - i) < 10 && size > 10)
-				print(b[j]);
+				print(b[j], 1);
 			j = i;
 			while ((j <= i + 9) && (j <= size - 1))
 			{
