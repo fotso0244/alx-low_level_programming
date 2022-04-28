@@ -23,8 +23,10 @@ void print_buffer(char *b, int size)
 				printf("%c", b[j]);
 			else
 				printf(".");
+			j++;
 		}
 		printf("\n");
 		i += 10;
+		j = 0;
 	}
 }
