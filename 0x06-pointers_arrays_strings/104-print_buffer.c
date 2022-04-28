@@ -27,6 +27,7 @@ void print_buffer(char *b, int size)
 					printf("0%x ", b[j + 1]);
 				j += 2;
 			}
+			j = i;
 			while ((j <= i + 9) && (j <= size - 1))
 			{
 				if ((size % 10 != 0) && (i == (size / 10) * 10) && (j == (size / 10) * 10))
