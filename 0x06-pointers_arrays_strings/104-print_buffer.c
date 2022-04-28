@@ -26,6 +26,8 @@ void printspace(int size, int i, int j)
 				for (k = 0; k <= nbspace - 1; k++)
 					printf(" ");
 		}
+	if (size < 10 && j == 0)
+		printf(" ");
 }
 /**
  * print_buffer - print size bytes of buffer
