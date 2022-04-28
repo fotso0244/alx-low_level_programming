@@ -58,8 +58,8 @@ void print_buffer(char *b, int size)
 					printf("0%x ", b[j + 1]);
 				j += 2;
 			}
-			if (size % 2 != 0 && j == size - 1)
-				printf("%x", b[size - 1]);
+			/*if (size % 2 != 0 && j == size - 1)
+				printf("%x", b[size - 1]);*/
 			j = i;
 			while ((j <= i + 9) && (j <= size - 1))
 			{
