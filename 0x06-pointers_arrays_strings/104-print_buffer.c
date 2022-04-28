@@ -10,8 +10,6 @@ void print_buffer(char *b, int size)
 {
 	int i = 0, j = 0, nbspace, k;
 
-	printf("%d\n", size);
-	printf("%d\n", (int)strlen(b));
 	while (i < (size - 1))
 	{
 		printf("0000000%x: ", i);
