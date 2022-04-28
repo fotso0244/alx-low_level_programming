@@ -60,14 +60,8 @@ void print_buffer(char *b, int size)
 			}
 			while ((j <= i + 8) && (j <= size - 2))
 			{
-				if (isprint(b[j]) != 0)
-					printf("%x", b[j]);
-				else
-					printf("0%x", b[j]);
-				if (isprint(b[j + 1]) != 0)
-					printf("%x ", b[j + 1]);
-				else
-					printf("0%x ", b[j + 1]);
+				print(b[j]);
+				print(b[j + 1]);
 				j += 2;
 			}
 			if (size % 2 != 0 && j == size - 1 && (j - i) < 10 && size > 10)
