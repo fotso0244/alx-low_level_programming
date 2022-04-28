@@ -11,7 +11,7 @@ void printspace(int size, int i, int j)
 {
 	int nbspace, k;
 
-	if ((size % 10) % 2 == 0)
+	if ((size % 10) % 2 == 0 && size > 10)
 		if ((size % 10 != 0) && (i == (size / 10) * 10) && (j == (size / 10) * 10))
 		{
 			nbspace = ((10 - (size % 10)) * 2) + ((10 - (size % 10)) / 2);
@@ -19,7 +19,7 @@ void printspace(int size, int i, int j)
 					printf(" ");
 		}
 
-	if ((size % 10) % 2 != 0)
+	if ((size % 10) % 2 != 0 && size > 10)
 		if ((size % 10 != 0) && (i == (size / 10) * 10) && (j == (size / 10) * 10))
 		{
 			nbspace = ((10 - (size % 10)) * 2) + ((10 - (size % 10)) / 2) + 3;
