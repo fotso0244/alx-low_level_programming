@@ -22,7 +22,7 @@ void printspace(int size, int i, int j)
 	if ((size % 10) % 2 != 0 && size > 10)
 		if ((size % 10 != 0) && (i == (size / 10) * 10) && (j == (size / 10) * 10))
 		{
-			nbspace = ((10 - (size % 10)) * 2) + ((10 - (size % 10)) / 2) + 3;
+			nbspace = ((10 - (size % 10)) * 2) + ((10 - (size % 10)) / 2) + 1;
 				for (k = 0; k <= nbspace - 1; k++)
 					printf(" ");
 		}
@@ -42,7 +42,10 @@ void print_buffer(char *b, int size)
 		while (i < (size - 1))
 		{
 			j = i;
-			printf("0000000%x: ", i);
+			if (i <= 10)
+				printf("0000000%x: ", i);
+			else
+				printf("000000%x: ", i);
 			while ((j <= i + 8) && (j <= size - 2))
 			{
 				if (isprint(b[j]) != 0)
@@ -55,7 +58,7 @@ void print_buffer(char *b, int size)
 					printf("0%x ", b[j + 1]);
 				j += 2;
 			}
-			if (size % 2 != 0)
+			if (size % 2 != 0 && j == size - 1)
 				printf("%x", b[size - 1]);
 			j = i;
 			while ((j <= i + 9) && (j <= size - 1))
