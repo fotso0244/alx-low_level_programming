@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include <stdio.h>
 /**
  * print_buffer - print size bytes of buffer
  * @b: buffer
