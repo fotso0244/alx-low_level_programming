@@ -5,3 +5,4 @@ Code 3-factorial.c prints factorial of an integer
 Code 4-pow_recursion.c prints x raised a power of y
 Code 6-is_prime_number.c checks prime number
 Code 5-sqrt_recursion.c computes sqrt of a number
+Code 100-is_palindrome.c checks palindrome string
