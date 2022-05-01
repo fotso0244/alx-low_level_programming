@@ -10,13 +10,13 @@ int is_prime_rec(int k, int n)
 	if (n > 0)
 	{
 		if ((k == n) && (n > 1))
-			return(1);
+			return (1);
 		if (n == 1)
 			return (0);
 		if (k + 1 < n)
 		{
 			if (n % (k + 1) == 0)
-		       		return (0);
+				return (0);
 		}
 	}
 	else
