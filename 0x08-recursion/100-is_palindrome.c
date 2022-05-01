@@ -7,7 +7,7 @@
  * @cpy: another string to store reverse
  * @k: index
  */
-void rev_recursion(char *s, char cpy[100], int k)
+void rev_recursion(char *s, char cpy[1000], int k)
 {
 	if (*s)
 	{
@@ -23,7 +23,8 @@ void rev_recursion(char *s, char cpy[100], int k)
  */
 int is_palindrome(char *s)
 {
-	char cpy[100];
+	char cpy[1000];
+
 	rev_recursion(s, cpy, strlen(s) - 1);
 	cpy[strlen(s)] = '\0';
 	if (strcmp(s, cpy) == 0)
