@@ -1,6 +1,7 @@
 /**
  * sqrt_rec - computes sqrt of a number
  * @n: number
+ * @k: int
  *
  * Return: sqrt of number
  */
