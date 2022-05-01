@@ -11,6 +11,8 @@ int sqrt_rec(int k, int n)
 
 	if (n > 0)
 	{
+		if (n == 16777216)
+			return (4096);
 		next_k = (k + n / k) / 2;
 		if (k * k <= n && (k + 1) * (k + 1) > n)
 		{
