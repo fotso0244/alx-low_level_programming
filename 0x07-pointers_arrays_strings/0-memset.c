@@ -1,6 +1,7 @@
 /**
  * _memset - fill n bytes
  * @s: memory area
+ * @b: constant for use
  * @n: number of bytes to fill
  *
  * Return: pointer to memory area
