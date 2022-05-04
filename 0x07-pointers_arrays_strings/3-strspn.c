@@ -30,5 +30,5 @@ int _strspn(char *s, char *accept)
 		i++;
 	}
 	res[i + 1] = '\0';
-	return((int)strlen(res));
+	return ((int)strlen(res));
 }
