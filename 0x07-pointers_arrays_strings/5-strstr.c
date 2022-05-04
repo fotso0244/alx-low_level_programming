@@ -11,24 +11,29 @@ char *_strstr(char *haystack, char *needle)
 	int i = 0, j = 0, k = 0;
 	char *res;
 
-	while (*(haystack + i) != '\0')
+	if (strcmp(needle, "") != 0)
 	{
-		if (*(haystack + i) == *(needle + j))
+		while (*(haystack + i) != '\0')
 		{
-			k++;
-			j++;
-		}
-		else
-		{
-			k = 0;
-			j = 0;
+			if (*(haystack + i) == *(needle + j))
+			{
+				k++;
+				j++;
+			}
+			else
+			{
+				k = 0;
+				j = 0;
+			}
+			if (k == (int)strlen(needle))
+				break;
+			i++;
 		}
 		if (k == (int)strlen(needle))
-			break;
-		i++;
+			res = haystack + (i - k + 1);
+		else
+			res = NULL;
 	}
-	if (k == (int)strlen(needle))
-		res = haystack + (i - k + 1);
 	else
 		res = NULL;
 	return (res);
