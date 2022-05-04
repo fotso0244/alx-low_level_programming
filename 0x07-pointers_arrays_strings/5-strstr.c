@@ -22,8 +22,17 @@ char *_strstr(char *haystack, char *needle)
 			}
 			else
 			{
-				k = 0;
-				j = 0;
+				if (haystack[i] != haystack [i - 1])
+				{
+					k = 0;
+					j = 0;
+				}
+				else
+					if (k > 1)
+					{
+						k = 0;
+						j = 0;
+					}
 			}
 			if (k == (int)strlen(needle))
 				break;
