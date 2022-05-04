@@ -1,10 +1,10 @@
 #include <string.h>
 /**
- * _strspn - gets length of a prefix substring
- * @s: string to scan
- * @accept: string containing character to match
+ * _strstr - locates a substring
+ * @haystack: string to scan
+ * @needle: substring to search
  *
- * Return: length of initial substring
+ * Return: pointer to first occurrence of substring
  */
 char *_strstr(char *haystack, char *needle)
 {
