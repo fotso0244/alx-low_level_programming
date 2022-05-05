@@ -35,16 +35,16 @@ char *str_concat(char *s1, char *s2)
 	int i, j = 0, size;
 	char *res;
 
-	if (s1 == NULL)
+	if (s1 == NULL && s2 == NULL)
+		res = NULL;
+	if (s1 == NULL && s2 != NULL)
 	{
 		res = str_concat2(s2);
 	}
-	if (s2 == NULL)
+	if (s2 == NULL && s1 != NULL)
 	{
 		res = str_concat2(s1);
 	}
-	if (s1 == NULL && s2 == NULL)
-		res = "";
 	if ((s1 != NULL) && (s2 != NULL))
 	{
 		res = malloc(sizeof(char) * (strlen(s1) + strlen(s2)));
