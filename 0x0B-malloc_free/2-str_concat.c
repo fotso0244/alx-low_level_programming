@@ -36,7 +36,10 @@ char *str_concat(char *s1, char *s2)
 	char *res;
 
 	if (s1 == NULL && s2 == NULL)
-		res = NULL;
+	{
+		res = malloc(sizeof(char));
+		*res = 0;
+	}
 	if (s1 == NULL && s2 != NULL)
 	{
 		res = str_concat2(s2);
