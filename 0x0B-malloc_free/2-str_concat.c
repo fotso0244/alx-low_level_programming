@@ -40,7 +40,7 @@ char *str_concat(char *s1, char *s2)
 		res = malloc(sizeof(char));
 		if (res != NULL)
 		{
-			*res = 0;
+			*res = '\n';
 			*(res + 1) = 0;
 		}
 	}
