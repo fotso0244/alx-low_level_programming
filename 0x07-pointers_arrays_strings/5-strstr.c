@@ -1,4 +1,12 @@
 #include <string.h>
+/**
+ * result - treatment
+ * @j: int
+ * @i: int
+ * @s: char
+ *
+ * Return: pointer to char
+ */
 char *result(int j, int i, char *s)
 {
 	char *res;
@@ -19,7 +27,6 @@ char *result(int j, int i, char *s)
 char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, j = 0, k = 0;
-	char *res;
 
 	while (*(haystack + i) != '\0')
 	{
