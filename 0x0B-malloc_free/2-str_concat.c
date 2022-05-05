@@ -38,8 +38,11 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL && s2 == NULL)
 	{
 		res = malloc(sizeof(char));
-		*res = 0;
-		*(res + 1) = 0;
+		if (res != NULL)
+		{
+			*res = 0;
+			*(res + 1) = 0;
+		}
 	}
 	if (s1 == NULL && s2 != NULL)
 	{
