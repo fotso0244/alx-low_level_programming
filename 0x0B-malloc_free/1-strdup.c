@@ -23,4 +23,5 @@ char *_strdup(char *str)
 		else
 			res = NULL;
 	}
+	return (res);
 }
