@@ -4,15 +4,16 @@
  * @j: int
  * @i: int
  * @s: char
+ * @base: char
  *
  * Return: pointer to char
  */
-char *result(int j, int i, char *s)
+char *result(int j, int i, char *base, char *s)
 {
 	char *res;
 
 	if (j == (int)strlen(s))
-		res = s + (i - j + 1);
+		res = base + (i - j + 1);
 	else
 		res = NULL;
 	return (res);
@@ -53,5 +54,5 @@ char *_strstr(char *haystack, char *needle)
 			break;
 		i++;
 	}
-	return (result(k, i, needle));
+	return (result(k, i, haystack, needle));
 }
