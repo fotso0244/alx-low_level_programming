@@ -8,7 +8,7 @@
  *
  * Return: pointer to char
  */
-char *str_concat2(char *s1, char *snull)
+char *str_concat2(char *s1)
 {
 	int i;
 	char *res;
@@ -38,11 +38,11 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 	{
-		res = str_concat2(s2, s1);
+		res = str_concat2(s2);
 	}
 	if (s2 == NULL)
 	{
-		res = str_concat2(s1, s2);
+		res = str_concat2(s1);
 	}
 	if (s1 == NULL && s2 == NULL)
 		res = "";
