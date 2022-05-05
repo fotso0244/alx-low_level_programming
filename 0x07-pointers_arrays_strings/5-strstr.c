@@ -38,7 +38,7 @@ char *_strstr(char *haystack, char *needle)
 		}
 		else
 		{
-			if (haystack[i] != haystack [i - 1])
+			if (haystack[i] != haystack[i - 1])
 			{
 				k = 0;
 				j = 0;
