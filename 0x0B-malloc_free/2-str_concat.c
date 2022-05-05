@@ -2,9 +2,8 @@
 #include <stddef.h>
 #include <string.h>
 /**
- * str_concat2: concatenates 2 strings, 1 string is null
+ * str_concat2 - concatenates 2 strings, 1 string is null
  * @s1: first string
- * @snull: second string
  *
  * Return: pointer to char
  */
@@ -25,7 +24,7 @@ char *str_concat2(char *s1)
 	return (res);
 }
 /**
- * str_concat: concatenates 2 strings
+ * str_concat - concatenates 2 strings
  * @s1: first string
  * @s2: second string
  *
