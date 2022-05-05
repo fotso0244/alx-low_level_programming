@@ -27,7 +27,7 @@ int **alloc_grid(int width, int height)
 						*(*(res + i) + j) = 0;
 				}
 				else
-				*(res + i) = NULL;
+					break;
 			}
 		else
 			res = NULL;
