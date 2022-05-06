@@ -57,9 +57,7 @@ char **strtow(char *str)
 	int i, j = 0, k = 0;
 	char **res;
 
-	if (strcmp(str, " ") == 0)
-		res = NULL;
-	if (str == NULL || strcmp(str, "") == 0)
+	if (strcmp(str, " ") == 0 || str == NULL || strcmp(str, "") == 0)
 		res = NULL;
 	else
 	{
