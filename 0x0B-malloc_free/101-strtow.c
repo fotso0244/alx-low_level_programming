@@ -12,21 +12,26 @@ int countwords(char *str)
 {
 	int res = 0, i = 0;
 
-	while (str[i] != '\0')
+	if (str == NULL || strcmp(str, "") == 0)
+		res = 0;
+	else
 	{
-		if (str[i] <= 31)
-			i++;
-		else
-			if (str[i] == 32 && i != 0 && str[i - 1] > 32)
-			{
-				res++;
+		while (str[i] != '\0')
+		{
+			if (str[i] <= 31)
 				i++;
-			}
 			else
-				i++;
+				if (str[i] == 32 && i != 0 && str[i - 1] > 32)
+				{
+					res++;
+					i++;
+				}
+				else
+					i++;
+		}
+		if (i == (int)strlen(str) && str[i - 1] > 32)
+			res++;
 	}
-	if (i == (int)strlen(str) && str[i - 1] > 32)
-		res++;
 	return (res);
 }
 /**
@@ -57,7 +62,7 @@ char **strtow(char *str)
 	int i, j = 0, k = 0;
 	char **res;
 
-	if (strcmp(str, " ") == 0 || str == NULL || strcmp(str, "") == 0)
+	if (countwords(str) == 0)
 		return (NULL);
 	else
 	{
