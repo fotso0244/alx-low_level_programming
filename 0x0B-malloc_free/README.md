@@ -4,3 +4,4 @@ Code 2-str_concat.c concatenates 2 strings
 Code 3-alloc_grid.c  creates 2 dimensional array
 Code 4-free_grid.c frees 2-D array
 Code 101-strtow splits a string into words
+Code 100-argstostr.c concatenates all arguments of a program
