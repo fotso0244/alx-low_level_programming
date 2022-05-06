@@ -87,6 +87,6 @@ char **strtow(char *str)
 		}
 		else
 			res = NULL;
-	}
 	return (res);
+	}
 }
