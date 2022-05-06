@@ -61,8 +61,7 @@ char **strtow(char *str)
 		res = NULL;
 	else
 	{
-		printf("nbre words: %d\n", countwords(str));
-		res = malloc(sizeof(char *) * (countwords(str) + 1));
+		res = malloc(sizeof(char *) * countwords(str));
 		if (res != NULL)
 		{
 			for (i = 0; i <= countwords(str); i++)
@@ -84,7 +83,6 @@ char **strtow(char *str)
 						res = NULL;
 				}
 			}
-			*(res + i + 1) = NULL;
 		}
 		else
 			res = NULL;
