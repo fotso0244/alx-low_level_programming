@@ -63,7 +63,7 @@ char **strtow(char *str)
 	char **res;
 
 	if (countwords(str) == 0)
-		return (NULL);
+		res = NULL;
 	else
 	{
 		res = malloc(sizeof(char *) * (countwords(str)));
@@ -92,6 +92,6 @@ char **strtow(char *str)
 		}
 		else
 			res = NULL;
-	return (res);
 	}
+	return (res);
 }
