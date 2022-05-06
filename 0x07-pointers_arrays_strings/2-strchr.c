@@ -24,7 +24,7 @@ char *_strchr(char *s, char c)
 			}
 			i++;
 		}
-		*(res + (int)strlen(res)) = '\0'
+		*(res + (int)strlen(res)) = '\0';
 		if (*(s + i) == '\0' && s[i + 1] == '\0')
 			res = NULL;
 	}
