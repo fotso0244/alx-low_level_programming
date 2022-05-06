@@ -1,6 +1,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 /**
  * countwords - counts words
  * @str: a string
@@ -13,7 +14,7 @@ int countwords(char *str)
 
 	while (str[i] != '\0')
 	{
-		if (!(str[i] <= 32 && str[i] >= 0))
+		if (str[i] <= 31)
 			i++;
 		else
 			if (str[i] == 32 && i != 0 && str[i - 1] > 32)
@@ -24,6 +25,8 @@ int countwords(char *str)
 			else
 				i++;
 	}
+	if (i == (int)strlen(str) && str[i - 1] > 32)
+		res++;
 	return (res);
 }
 /**
@@ -58,6 +61,7 @@ char **strtow(char *str)
 		res = NULL;
 	else
 	{
+		printf("nbre words: %d\n", countwords(str));
 		res = malloc(sizeof(char *) * (countwords(str) + 1));
 		if (res != NULL)
 		{
