@@ -58,7 +58,7 @@ char **strtow(char *str)
 	char **res;
 
 	if (strcmp(str, " ") == 0 || str == NULL || strcmp(str, "") == 0)
-		res = NULL;
+		return (NULL);
 	else
 	{
 		res = malloc(sizeof(char *) * (countwords(str)));
