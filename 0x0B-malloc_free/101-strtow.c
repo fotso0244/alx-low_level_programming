@@ -64,7 +64,7 @@ char **strtow(char *str)
 		res = malloc(sizeof(char *) * countwords(str));
 		if (res != NULL)
 		{
-			for (i = 0; i <= countwords(str); i++)
+			for (i = 0; i <= countwords(str) - 1; i++)
 			{
 				while (str[k] <= 32 && str[k] != '\0')
 					k++;
