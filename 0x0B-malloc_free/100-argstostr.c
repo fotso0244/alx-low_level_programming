@@ -7,7 +7,8 @@
  * @av: double pointer
  *
  * Return: pointer to char
- */char *argstostr(int ac, char **av)
+ */
+char *argstostr(int ac, char **av)
 {
 	int i, sum = 0;
 	char *res = "";
