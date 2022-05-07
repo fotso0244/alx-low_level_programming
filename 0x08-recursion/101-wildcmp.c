@@ -11,19 +11,20 @@ int testwild(char *s)
 {
 	int i = 0, res;
 
-	while (s[i] != '\0')
+	if (s[i] != '\0')
 	{
 		if (s[i] != 42)
 		{
-			res = 1;
 			i++;
+			res = testwild(s + i);
 		}
 		else
 		{
-			res = 0;
-			break;
+			res = 1;
 		}
 	}
+	else
+		res = 0;
 	return (res);
 }
 /**
