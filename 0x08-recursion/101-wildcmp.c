@@ -7,24 +7,44 @@
  *
  * Return: 1 is true, otherwise 0
  */
-int testwild(char *s)
+int testwild(char *s, int j)
 {
-	int i = 0, res;
+	int i = j, res;
 
-	if (s[i] != '\0')
+	if (s[0] != '\0')
 	{
-		if (s[i] != 42)
+		if (s[0] != 42)
 		{
 			i++;
-			res = testwild(s + i);
+			res = testwild(s + 1, i);
 		}
 		else
 		{
-			res = 1;
+			res = 0;
 		}
 	}
 	else
+		res = 1;
+	return (res);
+}
+/**
+ * test - test
+ * @s2: char
+ * @i: int
+ *
+ * Return: res
+ */
+int test(char *s2, int i)
+{
+	int res;
+
+	if (s2[i] == 42 && s2[i + 1] != 42 && s2[i + 1] != '\0')
 		res = 0;
+	else
+		if (s2[i] == 42)
+			res = 1;
+		else
+			res = 0;
 	return (res);
 }
 /**
@@ -38,7 +58,7 @@ int wildcmp2(char *s1, char *s2)
 {
 	int i = 0, res;
 
-	if (testwild(s2) && testwild(s1))
+	if (testwild(s2, 0) && testwild(s1, 0))
 	{
 		if (strcmp(s1, s2) == 0)
 			res = 1;
@@ -70,7 +90,7 @@ int wildcmp2(char *s1, char *s2)
 					res = 1;
 			}
 			else
-				res = 0;
+				res = test(s2, i);
 		}
 	return (res);
 }
@@ -87,7 +107,7 @@ int wildcmp(char *s1, char *s2)
 
 	if (s1 != NULL && s2 != NULL)
 	{
-		if (testwild(s2) && testwild(s1))
+		if (testwild(s2, 0) == 1 && testwild(s1, 0) == 1)
 		{
 			if (strcmp(s1, s2) == 0)
 				res = 1;
@@ -95,13 +115,15 @@ int wildcmp(char *s1, char *s2)
 				res = 0;
 		}
 		else
-			if (!testwild(s2) && testwild(s1))
+			if (testwild(s2, 0) == 0 && testwild(s1, 0) == 1)
 			{
 				res = wildcmp2(s1, s2);
 			}
 			else
-				if (!testwild(s1) && testwild(s2))
+				if (testwild(s1, 0) == 0 && testwild(s2, 0) == 1)
+				{
 					res = wildcmp2(s2, s1);
+				}
 	}
 	else
 		res = 0;
