@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * main - adds positive numbers
  * @argc: number of arguments
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
 	{
 		while (i <= argc - 1)
 		{
-			if (atoi(argv[i]) != 0)
+			if (atoi(argv[i]) != 0 || strcmp(argv[i], "0") == 0)
 			{
 				res += atoi(argv[i]);
 				i++;
