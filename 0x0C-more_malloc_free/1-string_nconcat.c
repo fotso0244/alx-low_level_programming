@@ -2,6 +2,37 @@
 #include <stdlib.h>
 #include <stddef.h>
 /**
+ * concat - concatenates one string null with another string
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: pointer to char
+ */
+char *concat(char *s1, char *s2)
+{
+	char *res;
+
+	if (s1 != NULL && s2 == NULL)
+	{
+		res = malloc(sizeof(char) * (strlen(s1) + 1));
+		if (res != NULL)
+			strcpy(res, s1);
+	}
+	if (s2 != NULL && s1 == NULL)
+	{
+		res = malloc(sizeof(char) * (strlen(s2) + 1));
+		if (res != NULL)
+			strcpy(res, s2);
+	}
+	if (s2 == NULL && s1 == NULL)
+	{
+		res = malloc(1);
+		if (res != NULL)
+			res = "";
+	}
+	return (res);
+}
+/**
  * string_nconcat - concatenates n characters of s2 with s1
  * @s1: first string
  * @s2: second string
@@ -42,17 +73,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 				res = string_nconcat(s1, s2, (unsigned int)strlen(s2));
 	}
 	else
-		if (s1 != NULL)
-		{
-			res = malloc(sizeof(char) * (strlen(s1) + 1));
-			if (res != NULL)
-				strcpy(res, s1);
-		}
-		else
-		{
-			res = malloc(sizeof(char) * (strlen(s2) + 1));
-			if (res != NULL)
-				strcpy(res, s2);
-		}
+		res = concat(s1, s2);
 	return (res);
 }
