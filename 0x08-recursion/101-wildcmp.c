@@ -4,6 +4,7 @@
 /**
  * testwild - checks * special character
  * @s: a string
+ * @j: int
  *
  * Return: 1 is true, otherwise 0
  */
