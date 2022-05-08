@@ -36,8 +36,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 		if (s1 != NULL)
-			res = s1;
+		{
+			res = malloc(sizeof(char) * (strlen(s1) + 1));
+			strcpy(res, s1);
+		}
 		else
-			res = s2;
+		{
+			res = malloc(sizeof(char) * (strlen(s2) + 1));
+			strcpy(res, s2);
+		}
 	return (res);
 }
