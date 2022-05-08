@@ -8,8 +8,9 @@
  *
  * Return: pointer to char
  */
-char *concat(char *s1, char *s2)
+char *concat(char *s1, char *s2, unsigned int n)
 {
+	unsigned int i;
 	char *res;
 
 	if (s1 != NULL && s2 == NULL)
@@ -20,9 +21,19 @@ char *concat(char *s1, char *s2)
 	}
 	if (s2 != NULL && s1 == NULL)
 	{
-		res = malloc(sizeof(char) * (strlen(s2) + 1));
-		if (res != NULL)
-			strcpy(res, s2);
+		if (n <= (unsigned int)strlen(s2))
+		{
+			res = malloc(sizeof(char) * (n + 1));
+			if (res != NULL)
+				for (i = 0; i <= n - 1; i++)
+					res[i] = s2[i];
+		}
+		else
+		{
+			res = malloc(sizeof(char) * (strlen(s2) + 1));
+			if (res != NULL)
+				strcpy(res, s2);
+		}
 	}
 	if (s2 == NULL && s1 == NULL)
 	{
@@ -73,6 +84,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 				res = string_nconcat(s1, s2, (unsigned int)strlen(s2));
 	}
 	else
-		res = concat(s1, s2);
+		res = concat(s1, s2, n);
 	return (res);
 }
