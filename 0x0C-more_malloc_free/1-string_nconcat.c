@@ -25,8 +25,11 @@ char *concat(char *s1, char *s2, unsigned int n)
 		{
 			res = malloc(sizeof(char) * (n + 1));
 			if (res != NULL)
+			{
 				for (i = 0; i <= n - 1; i++)
 					res[i] = s2[i];
+				res[i] = '\0';
+			}
 		}
 		else
 		{
