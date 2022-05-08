@@ -16,7 +16,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 != NULL && s2 != NULL)
 	{
-		if (n <= (unsigned int)strlen(s2))
+		if (n == 0)
+		{
+			res = malloc(sizeof(char) *(strlen(s1) + 1));
+			if(res != NULL)
+				strcpy(res, s1);
+		}
+		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
 			res = malloc(sizeof(char) * (strlen(s1) + n + 1));
 			if (res != NULL)
@@ -32,18 +38,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			}
 		}
 		else
-			res = string_nconcat(s1, s2, (unsigned int)strlen(s2));
+			if (n != 0)
+				res = string_nconcat(s1, s2, (unsigned int)strlen(s2));
 	}
 	else
 		if (s1 != NULL)
 		{
 			res = malloc(sizeof(char) * (strlen(s1) + 1));
-			strcpy(res, s1);
+			if (res != NULL)
+				strcpy(res, s1);
 		}
 		else
 		{
 			res = malloc(sizeof(char) * (strlen(s2) + 1));
-			strcpy(res, s2);
+			if (res != NULL)
+				strcpy(res, s2);
 		}
 	return (res);
 }
