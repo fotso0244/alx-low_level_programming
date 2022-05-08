@@ -81,7 +81,7 @@ int wildcmp2(char *s1, char *s2)
 				if (s2[i] != '\0')
 				{
 					if (s2[i] != 42 && strrchr(s1, s2[i]) != NULL)
-						res = wildcmp2(strrchr(s1, s2[i]), s2 + i);
+						res = wildcmp2(strrchr(s1, s2[i]), strrchr(s2 + i, *(s2 + i)));
 					else
 					{
 						res = wildcmp2(s1, s2 + i);
