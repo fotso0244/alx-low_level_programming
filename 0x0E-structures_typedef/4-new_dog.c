@@ -17,19 +17,29 @@ dog_t *new_dog(char *name, float age, char *owner)
 	res = malloc(sizeof(dog_t));
 	if (res != NULL)
 	{
-		res->name = malloc(strlen(name) + 1);
-		if (res->name != NULL)
+		if (name != NULL)
 		{
-			strcpy(res->name, name);
-			res->name[strlen(name)] = '\0';
+			res->name = malloc(strlen(name) + 1);
+			if (res->name != NULL)
+			{
+				strcpy(res->name, name);
+				res->name[strlen(name)] = '\0';
+			}
+			else
+				return (NULL);
 		}
 		else
 			return (NULL);
-		res->owner = malloc(strlen(owner) + 1);
-		if (res->owner != NULL)
+		if (owner != NULL)
 		{
-			strcpy(res->owner, owner);
-			res->owner[strlen(owner)] = '\0';
+			res->owner = malloc(strlen(owner) + 1);
+			if (res->owner != NULL)
+			{
+				strcpy(res->owner, owner);
+				res->owner[strlen(owner)] = '\0';
+			}
+			else
+				return (NULL);
 		}
 		else
 			return (NULL);
