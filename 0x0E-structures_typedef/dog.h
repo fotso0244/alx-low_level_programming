@@ -2,7 +2,7 @@
  * struct dog - dog structure
  * @name: name
  * @age: age
- * @omner: owner
+ * @owner: owner
  */
 struct dog
 {
