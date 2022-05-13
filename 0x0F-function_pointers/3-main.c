@@ -11,6 +11,7 @@
 int main(int argc, char **argv)
 {
 	int (*f)(int, int) = get_op_func(argv[2]);
+
 	if (argc - 1 ==  3)
 	{
 		if (get_op_func(argv[2]) != NULL)
