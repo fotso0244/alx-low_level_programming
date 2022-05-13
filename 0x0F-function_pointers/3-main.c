@@ -8,7 +8,7 @@
  *
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int (*f)(int, int) = get_op_func(argv[2]);
 	if (argc - 1 ==  3)
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 		if (get_op_func(argv[2]) != NULL)
 			if ((f == op_div || f == op_mod) && argv[3] == 0)
 			{
-				printf("Error100\n");
+				printf("Error\n");
 				exit(100);
 			}
 			else
@@ -25,13 +25,13 @@ int main(int argc, char *argv[])
 			}
 		else
 		{
-			printf("Error99\n");
+			printf("Error\n");
 			exit(99);
 		}
 	}
 	else
 	{
-		printf("Error98\n");
+		printf("Error");
 		exit(98);
 	}
 	return (0);
