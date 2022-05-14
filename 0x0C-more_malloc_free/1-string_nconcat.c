@@ -25,7 +25,8 @@ char *concat(char *s1, char *s2, unsigned int n)
 		}
 		else
 			return (NULL);*/
-		return (s1);
+		res = s1;
+		return (res);
 	}
 	if (s2 != NULL && s1 == NULL)
 	{
@@ -54,7 +55,8 @@ char *concat(char *s1, char *s2, unsigned int n)
 				}
 				else
 					return (NULL);*/
-				return (s2);
+				res = s2;
+				return (res);
 			}
 	}
 	if (s2 == NULL && s1 == NULL)
