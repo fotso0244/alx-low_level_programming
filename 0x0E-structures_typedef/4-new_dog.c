@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 /**
- * cprstr - copies string
+ * cpystr - copies string
  * @name: string to copy
  *
  * Return: a pointer to char
