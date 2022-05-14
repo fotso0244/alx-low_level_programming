@@ -17,7 +17,12 @@ char *concat(char *s1, char *s2, unsigned int n)
 	{
 		res = malloc(sizeof(char) * (strlen(s1) + 1));
 		if (res != NULL)
+		{
 			strcpy(res, s1);
+			res[strlen(s1)] = '\0';
+		}
+		else
+			return (NULL);
 	}
 	if (s2 != NULL && s1 == NULL)
 	{
@@ -30,19 +35,26 @@ char *concat(char *s1, char *s2, unsigned int n)
 					res[i] = s2[i];
 				res[i] = '\0';
 			}
+			else
+				return (NULL);
 		}
 		else
 		{
 			res = malloc(sizeof(char) * (strlen(s2) + 1));
 			if (res != NULL)
+			{
 				strcpy(res, s2);
+				res[strlen(s2)] = '\0';
+			}
+			else
+				return (NULL)
 		}
 	}
 	if (s2 == NULL && s1 == NULL)
 	{
 		res = malloc(1);
 		if (res != NULL)
-			res = "";
+			*res = "\0";
 	}
 	return (res);
 }
@@ -65,7 +77,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			res = malloc(sizeof(char) *(strlen(s1) + 1));
 			if(res != NULL)
+			{
 				strcpy(res, s1);
+				res[strlen(s1)] = '\0';
+			}
+			else
+				return (NULL);
 		}
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
@@ -74,13 +91,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			{
 				for (i = 0; i <= (unsigned int)strlen(s1) - 1; i++)
 					res[i] = s1[i];
-				for (i = (unsigned int)strlen(s1); i <= (unsigned int)strlen(s1) + n; i++)
+				for (i = (unsigned int)strlen(s1); i <= (unsigned int)strlen(s1) + n - 1; i++)
 				{
 					res[i] = s2[j];
 					j++;
 				}
 				res[i] = '\0';
 			}
+			else
+				return (NULL);
 		}
 		else
 			if (n != 0)
