@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdio.h>
 /**
  * concat - concatenates one string null with another string
  * @s1: first string
@@ -24,7 +25,9 @@ char *concat(char *s1, char *s2, unsigned int n)
 	}
 	if (s2 != NULL && s1 == NULL)
 	{
-		if (n <= (unsigned int)strlen(s2))
+		if (n == 0)
+			return (NULL);
+		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
 			res = malloc(sizeof(char) * (n + 1));
 			if (res != NULL)
@@ -46,7 +49,22 @@ char *concat(char *s1, char *s2, unsigned int n)
 		}
 	}
 	if (s2 == NULL && s1 == NULL)
-		res = "\0";
+		res = NULL;
+	return (res);
+}
+/**
+ * cpystr - copy a string
+ * @s: string
+ *
+ * Return: pointer to copy of string
+ */
+char *cpystr(char *s)
+{
+	char *res;
+
+	res = malloc(sizeof(char) * (strlen(s) + 1));
+	if (res != NULL)
+		strcpy(res, s);
 	return (res);
 }
 /**
@@ -59,18 +77,14 @@ char *concat(char *s1, char *s2, unsigned int n)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j = 0, k = (unsigned int)strlen(s1) + n - 1;
+	unsigned int i, j = 0, k;
 	char *res;
 
 	if (s1 != NULL && s2 != NULL)
 	{
 		if (n == 0)
 		{
-			res = malloc(sizeof(char) * (strlen(s1) + 1));
-			if (res != NULL)
-				strcpy(res, s1);
-			else
-				return (NULL);
+			res = cpystr(s1);
 		}
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
@@ -79,6 +93,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			{
 				for (i = 0; i <= (unsigned int)strlen(s1) - 1; i++)
 					res[i] = s1[i];
+				k = (unsigned int)strlen(s1) + n - 1;
 				for (i = (unsigned int)strlen(s1); i <= k; i++)
 				{
 					res[i] = s2[j];
