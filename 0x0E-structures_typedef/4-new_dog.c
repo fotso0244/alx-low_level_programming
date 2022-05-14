@@ -18,6 +18,8 @@ char *cpystr(char *name)
 		strcpy(dest, name);
 		dest[strlen(name)] = '\0';
 	}
+	else
+		return (NULL);
 	return (dest);
 }
 /**
