@@ -12,7 +12,7 @@ char *cpystr(char *name)
 {
 	char *dest;
 
-	dest = malloc(strlen(name) + 1);
+	dest = malloc(strlen(name));
 	if (dest != NULL)
 	{
 		strcpy(dest, name);
@@ -29,10 +29,8 @@ dog_t *new_dog2(char *name, float age, char *owner)
 	{
 		if (name != NULL && owner == NULL)
 		{
-			res->name = malloc(sizeof(char) * strlen(name));
-			if (res->name != NULL)
-				strcpy(res->name, name);
-			else
+			res->name = cpystr(name);
+			if (res->name == NULL)
 			{
 				free(res);
 				return (NULL);
@@ -42,10 +40,8 @@ dog_t *new_dog2(char *name, float age, char *owner)
 		}
 		if (owner != NULL && name == NULL)
 		{
-			res->owner = malloc(sizeof(char) * strlen(owner));
-			if (res != NULL)
-				strcpy(res->owner, owner);
-			else
+			res->owner = cpystr(owner);
+			if (res->owner == NULL)
 			{
 				free(res);
 				return (NULL);
