@@ -32,38 +32,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *res;
 
-	res = malloc(sizeof(dog_t));
-	if (res != NULL)
+	if (name != NULL && owner != NULL)
 	{
-		if (name != NULL)
+		res = malloc(sizeof(dog_t));
+		if (res != NULL)
 		{
 			res->name = cpystr(name);
-			if (res->name == NULL)
-			{
-				free(res);
-				return (NULL);
-			}
-		}
-		else
-		{
-			free(res);
-			return (NULL);
-		}
-		if (owner != NULL)
-		{
 			res->owner = cpystr(owner);
-			if (res->owner == NULL)
+			if (res->name == NULL || res->owner == NULL)
 			{
-				free(res);
 				return (NULL);
 			}
+			res->age = age;
 		}
-		else
-		{
-			free(res);
-			return (NULL);
-		}
-		res->age = age;
 	}
 	else
 		return (NULL);
