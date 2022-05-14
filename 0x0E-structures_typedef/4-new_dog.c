@@ -18,8 +18,6 @@ char *cpystr(char *name)
 		strcpy(dest, name);
 		dest[strlen(name)] = '\0';
 	}
-	else
-		return (NULL);
 	return (dest);
 }
 /**
@@ -36,7 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name != NULL && owner != NULL)
 	{
-		res = malloc(sizeof(dog_t));
+	
 		if (res != NULL)
 		{
 			res->name = cpystr(name);
