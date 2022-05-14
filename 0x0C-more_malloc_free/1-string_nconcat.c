@@ -40,13 +40,14 @@ char *concat(char *s1, char *s2, unsigned int n)
 				return (NULL);
 		}
 		else
-		{
-			res = malloc(sizeof(char) * strlen(s2));
-			if (res != NULL)
-				strcpy(res, s2);
-			else
-				return (NULL);
-		}
+			if (n != 0)
+			{
+				res = malloc(sizeof(char) * strlen(s2));
+				if (res != NULL)
+					strcpy(res, s2);
+				else
+					return (NULL);
+			}
 	}
 	if (s2 == NULL && s1 == NULL)
 		res = NULL;
