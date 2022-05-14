@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <stdio.h>
 /**
  * int_index - searches for an integer
  * @array: integer array
@@ -19,12 +20,16 @@ int int_index(int *array, int size, int (*cmp)(int))
 				if (!cmp(array[i]))
 					i++;
 				else
+				{
 					return (i);
+				}
 			}
 		else
 			return (-1);
 		if (i == size)
 			return (-1);
 	}
+	else
+		return (-1);
 	return (0);
 }
