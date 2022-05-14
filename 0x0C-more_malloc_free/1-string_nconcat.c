@@ -5,6 +5,7 @@
  * concat - concatenates one string null with another string
  * @s1: first string
  * @s2: second string
+ * @n: integer
  *
  * Return: pointer to char
  */
@@ -17,10 +18,7 @@ char *concat(char *s1, char *s2, unsigned int n)
 	{
 		res = malloc(sizeof(char) * (strlen(s1) + 1));
 		if (res != NULL)
-		{
 			strcpy(res, s1);
-			res[strlen(s1)] = '\0';
-		}
 		else
 			return (NULL);
 	}
@@ -42,20 +40,13 @@ char *concat(char *s1, char *s2, unsigned int n)
 		{
 			res = malloc(sizeof(char) * (strlen(s2) + 1));
 			if (res != NULL)
-			{
 				strcpy(res, s2);
-				res[strlen(s2)] = '\0';
-			}
 			else
 				return (NULL);
 		}
 	}
 	if (s2 == NULL && s1 == NULL)
-	{
-		res = malloc(1);
-		if (res != NULL)
-			res = "\0";
-	}
+		res = "\0";
 	return (res);
 }
 /**
@@ -68,19 +59,16 @@ char *concat(char *s1, char *s2, unsigned int n)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j = 0;
+	unsigned int i, j = 0, k = (unsigned int)strlen(s1) + n - 1;
 	char *res;
 
 	if (s1 != NULL && s2 != NULL)
 	{
 		if (n == 0)
 		{
-			res = malloc(sizeof(char) *(strlen(s1) + 1));
-			if(res != NULL)
-			{
+			res = malloc(sizeof(char) * (strlen(s1) + 1));
+			if (res != NULL)
 				strcpy(res, s1);
-				res[strlen(s1)] = '\0';
-			}
 			else
 				return (NULL);
 		}
@@ -91,7 +79,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			{
 				for (i = 0; i <= (unsigned int)strlen(s1) - 1; i++)
 					res[i] = s1[i];
-				for (i = (unsigned int)strlen(s1); i <= (unsigned int)strlen(s1) + n - 1; i++)
+				for (i = (unsigned int)strlen(s1); i <= k; i++)
 				{
 					res[i] = s2[j];
 					j++;
