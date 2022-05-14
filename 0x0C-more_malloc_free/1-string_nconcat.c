@@ -47,14 +47,14 @@ char *concat(char *s1, char *s2, unsigned int n)
 				res[strlen(s2)] = '\0';
 			}
 			else
-				return (NULL)
+				return (NULL);
 		}
 	}
 	if (s2 == NULL && s1 == NULL)
 	{
 		res = malloc(1);
 		if (res != NULL)
-			*res = "\0";
+			res = "\0";
 	}
 	return (res);
 }
