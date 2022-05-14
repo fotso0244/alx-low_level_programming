@@ -30,22 +30,22 @@ dog_t *new_dog2(char *name, float age, char *owner)
 		if (name != NULL && owner == NULL)
 		{
 			res->name = cpystr(name);
-			if (res->name == NULL)
+			/*if (res->name == NULL)
 			{
 				free(res);
 				return (NULL);
-			}
+			}*/
 			res->owner = owner;
 			res->age = age;
 		}
 		if (owner != NULL && name == NULL)
 		{
 			res->owner = cpystr(owner);
-			if (res->owner == NULL)
+			/*if (res->owner == NULL)
 			{
 				free(res);
 				return (NULL);
-			}
+			}*/
 			res->name = name;
 			res->age = age;
 		}
