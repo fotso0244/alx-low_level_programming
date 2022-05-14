@@ -41,11 +41,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		{
 			res->name = cpystr(name);
 			res->owner = cpystr(owner);
-			if (res->name == NULL || res->owner == NULL)
+		/*	if (res->name == NULL || res->owner == NULL)
 			{
 				free(res);
 				return (NULL);
-			}
+			}*/
 			res->age = age;
 		}
 	}
