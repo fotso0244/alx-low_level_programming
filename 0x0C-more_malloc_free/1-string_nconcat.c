@@ -17,7 +17,7 @@ char *concat(char *s1, char *s2, unsigned int n)
 
 	if (s1 != NULL && s2 == NULL)
 	{
-		res = malloc(sizeof(char) * strlen(s1));
+		res = malloc(sizeof(char) * (strlen(s1) + 1));
 		if (res != NULL)
 		{
 			strcpy(res, s1);
@@ -45,7 +45,7 @@ char *concat(char *s1, char *s2, unsigned int n)
 		else
 			if (n != 0)
 			{
-				res = malloc(sizeof(char) * strlen(s2));
+				res = malloc(sizeof(char) * (strlen(s2) + 1));
 				if (res != NULL)
 				{
 					strcpy(res, s2);
@@ -69,7 +69,7 @@ char *cpystr(char *s)
 {
 	char *res;
 
-	res = malloc(sizeof(char) * strlen(s));
+	res = malloc(sizeof(char) * (strlen(s) + 1));
 	if (res != NULL)
 	{
 		strcpy(res, s);
