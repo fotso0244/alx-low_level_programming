@@ -16,7 +16,7 @@ char *cpystr(char *name)
 	if (dest != NULL)
 	{
 		strcpy(dest, name);
-		dest[strlen(name)] = '\0';
+	/*	dest[strlen(name)] = '\0';*/
 	}
 	return (dest);
 }
