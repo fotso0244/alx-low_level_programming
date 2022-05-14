@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	if (argc - 1 ==  3)
 	{
 		if (get_op_func(argv[2]) != NULL)
-			if ((f == op_div || f == op_mod) && argv[3] == 0)
+			if ((f == op_div || f == op_mod) && atoi(argv[3]) == 0)
 			{
 				printf("Error\n");
 				exit(100);
