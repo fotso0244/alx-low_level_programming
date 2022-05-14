@@ -93,7 +93,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		res = new_dog_t2(name, age, owner);
+		res = new_dog2(name, age, owner);
 	}
 	return (res);
 }
