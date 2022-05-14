@@ -20,6 +20,50 @@ char *cpystr(char *name)
 	}
 	return (dest);
 }
+dog_t *new_dog2(char *name, float age, char *owner)
+{
+	dog_t *res;
+
+	res = malloc(sizeof(dog_t));
+	if (res != NULL)
+	{
+		if (name != NULL && owner == NULL)
+		{
+			res->name = malloc(sizeof(char) * strlen(name));
+			if (res->name != NULL)
+				strcpy(res->name, name);
+			else
+			{
+				free(res);
+				return (NULL);
+			}
+			res->owner = owner;
+			res->age = age;
+		}
+		if (owner != NULL && name == NULL)
+		{
+			res->owner = malloc(sizeof(char) * strlen(owner));
+			if (res != NULL)
+				strcpy(res->owner, owner);
+			else
+			{
+				free(res);
+				return (NULL);
+			}
+			res->name = name;
+			res->age = age;
+		}
+		else
+		{
+			res->name = NULL;
+			res->owner = NULL;
+			res->age = age;
+		}
+		return (res);
+	}
+	else
+		return (NULL);
+}
 /**
  * new_dog - creates new object of struct dog
  * @name: name
@@ -34,20 +78,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name != NULL && owner != NULL)
 	{
-	
+		res = malloc(sizeof(dog_t));	
 		if (res != NULL)
 		{
 			res->name = cpystr(name);
 			res->owner = cpystr(owner);
-		/*	if (res->name == NULL || res->owner == NULL)
+			if (res->name == NULL || res->owner == NULL)
 			{
 				free(res);
 				return (NULL);
-			}*/
+			}
 			res->age = age;
 		}
 	}
 	else
-		return (NULL);
+	{
+		res = new_dog_t2(name, age, owner);
+	}
 	return (res);
 }
