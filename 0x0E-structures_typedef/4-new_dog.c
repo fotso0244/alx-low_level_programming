@@ -3,6 +3,24 @@
 #include <string.h>
 #include <stdlib.h>
 /**
+ * cprstr - copies string
+ * @name: string to copy
+ *
+ * Return: a pointer to char
+ */
+char *cpystr(char *name)
+{
+	char *dest;
+
+	dest = malloc(strlen(name) + 1);
+	if (dest != NULL)
+	{
+		strcpy(dest, name);
+		dest[strlen(name)] = '\0';
+	}
+	return (dest);
+}
+/**
  * new_dog - creates new object of struct dog
  * @name: name
  * @age: age
@@ -19,30 +37,32 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		if (name != NULL)
 		{
-			res->name = malloc(strlen(name) + 1);
-			if (res->name != NULL)
+			res->name = cpystr(name);
+			if (res->name == NULL)
 			{
-				strcpy(res->name, name);
-				res->name[strlen(name)] = '\0';
-			}
-			else
+				free(res);
 				return (NULL);
+			}
 		}
 		else
+		{
+			free(res);
 			return (NULL);
+		}
 		if (owner != NULL)
 		{
-			res->owner = malloc(strlen(owner) + 1);
-			if (res->owner != NULL)
+			res->owner = cpystr(owner);
+			if (res->owner == NULL)
 			{
-				strcpy(res->owner, owner);
-				res->owner[strlen(owner)] = '\0';
-			}
-			else
+				free(res);
 				return (NULL);
+			}
 		}
 		else
+		{
+			free(res);
 			return (NULL);
+		}
 		res->age = age;
 	}
 	else
