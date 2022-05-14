@@ -3,6 +3,26 @@
 #include <stddef.h>
 #include <stdio.h>
 /**
+ * cpystr - copy a string
+ * @s: string
+ *
+ * Return: pointer to copy of string
+ */
+char *cpystr(char *s)
+{
+	char *res;
+	int i;
+
+	res = malloc(sizeof(char) * (strlen(s) + 1));
+	if (res != NULL)
+	{
+		for (i = 0; i <= (int)strlen(s) - 1; i++)
+			res[i] = s[i];
+		res[i] = '\0';
+	}
+	return (res);
+}
+/**
  * concat - concatenates one string null with another string
  * @s1: first string
  * @s2: second string
@@ -17,14 +37,7 @@ char *concat(char *s1, char *s2, unsigned int n)
 
 	if (s1 != NULL && s2 == NULL)
 	{
-		res = malloc(sizeof(char) * (strlen(s1) + 1));
-		if (res != NULL)
-		{
-			strcpy(res, s1);
-			res[strlen(s1)] = '\0';
-		}
-		else
-			return (NULL);
+		res = cpystr(s1);
 	}
 	if (s2 != NULL && s1 == NULL)
 	{
@@ -45,36 +58,11 @@ char *concat(char *s1, char *s2, unsigned int n)
 		else
 			if (n != 0)
 			{
-				res = malloc(sizeof(char) * (strlen(s2) + 1));
-				if (res != NULL)
-				{
-					strcpy(res, s2);
-					res[strlen(s2)] = '\0';
-				}
-				else
-					return (NULL);
+				res = cpystr(s2);
 			}
 	}
 	if (s2 == NULL && s1 == NULL)
 		res = NULL;
-	return (res);
-}
-/**
- * cpystr - copy a string
- * @s: string
- *
- * Return: pointer to copy of string
- */
-char *cpystr(char *s)
-{
-	char *res;
-
-	res = malloc(sizeof(char) * (strlen(s) + 1));
-	if (res != NULL)
-	{
-		strcpy(res, s);
-		res[strlen(s)] = '\0';
-	}
 	return (res);
 }
 /**
