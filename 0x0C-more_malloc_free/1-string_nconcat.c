@@ -17,16 +17,14 @@ char *concat(char *s1, char *s2, unsigned int n)
 
 	if (s1 != NULL && s2 == NULL)
 	{
-		/*res = malloc(sizeof(char) * (strlen(s1) + 1));
+		res = malloc(sizeof(char) * (strlen(s1) + 1));
 		if (res != NULL)
 		{
 			strcpy(res, s1);
 			res[strlen(s1)] = '\0';
 		}
 		else
-			return (NULL);*/
-		res = s1;
-		return (res);
+			return (NULL);
 	}
 	if (s2 != NULL && s1 == NULL)
 	{
@@ -47,16 +45,14 @@ char *concat(char *s1, char *s2, unsigned int n)
 		else
 			if (n != 0)
 			{
-				/*res = malloc(sizeof(char) * (strlen(s2) + 1));
+				res = malloc(sizeof(char) * (strlen(s2) + 1));
 				if (res != NULL)
 				{
 					strcpy(res, s2);
 					res[strlen(s2)] = '\0';
 				}
 				else
-					return (NULL);*/
-				res = s2;
-				return (res);
+					return (NULL);
 			}
 	}
 	if (s2 == NULL && s1 == NULL)
@@ -68,7 +64,7 @@ char *concat(char *s1, char *s2, unsigned int n)
  * @s: string
  *
  * Return: pointer to copy of string
- 
+ */
 char *cpystr(char *s)
 {
 	char *res;
@@ -80,7 +76,7 @@ char *cpystr(char *s)
 		res[strlen(s)] = '\0';
 	}
 	return (res);
-}*/
+}
 /**
  * string_nconcat - concatenates n characters of s2 with s1
  * @s1: first string
@@ -98,7 +94,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		if (n == 0)
 		{
-			res = s1;
+			res = cpystr(s1);
 		}
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
