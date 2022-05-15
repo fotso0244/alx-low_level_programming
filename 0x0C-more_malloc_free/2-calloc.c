@@ -3,7 +3,7 @@
 #include <stddef.h>
 #include <string.h>
 /**
- * calloc - allocates memory
+ * _calloc - allocates memory
  * @nmemb: number of elements
  * @size: size of each element
  *
