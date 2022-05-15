@@ -110,5 +110,6 @@ int main(int argc, char **argv)
 	res = tostring(mul);
 	revstr(res);
 	printstr(res);
+	free(res);
 	return (0);
 }
