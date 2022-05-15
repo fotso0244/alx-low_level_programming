@@ -22,6 +22,16 @@ char *cpystr(char *s)
 	}
 	return (res);
 }
+char *emptystr()
+{
+	char *res;
+
+	res = malloc(sizeof(*res) + 1);
+	if (res != NULL)
+		strcpy(res, "");
+	return (res);
+}
+		
 /**
  * concat - concatenates one string null with another string
  * @s1: first string
@@ -42,7 +52,7 @@ char *concat(char *s1, char *s2, unsigned int n)
 	if (s2 != NULL && s1 == NULL)
 	{
 		if (n == 0)
-			return ("");
+			return (emptystr());
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
 			res = malloc(sizeof(*res) * (n + 1));
@@ -60,7 +70,7 @@ char *concat(char *s1, char *s2, unsigned int n)
 			}
 	}
 	if (s2 == NULL && s1 == NULL)
-		res = "";
+		res = emptystr();
 	return (res);
 }
 /**
