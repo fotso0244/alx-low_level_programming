@@ -22,6 +22,11 @@ char *cpystr(char *s)
 	}
 	return (res);
 }
+/**
+ * emptystr - allocates memory for empty string
+ *
+ * Return: pointer to empty string
+ */
 char *emptystr()
 {
 	char *res;
@@ -31,7 +36,6 @@ char *emptystr()
 		strcpy(res, "");
 	return (res);
 }
-		
 /**
  * concat - concatenates one string null with another string
  * @s1: first string
