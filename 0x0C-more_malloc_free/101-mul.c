@@ -85,7 +85,7 @@ void revstr(char *s)
  *
  * Return: 1 if true, otherwise 0
  */
-unsigned int chkzerostr(char *str)
+unsigned int chkzerostr(char *s)
 {
 	unsigned int i = 0, res;
 
