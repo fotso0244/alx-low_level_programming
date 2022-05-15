@@ -13,7 +13,7 @@ char *cpystr(char *s)
 	char *res;
 	int i;
 
-	res = malloc(sizeof(char) * (strlen(s) + 1));
+	res = malloc(sizeof *res * (strlen(s) + 1));
 	if (res != NULL)
 	{
 		for (i = 0; i <= (int)strlen(s) - 1; i++)
@@ -42,18 +42,16 @@ char *concat(char *s1, char *s2, unsigned int n)
 	if (s2 != NULL && s1 == NULL)
 	{
 		if (n == 0)
-			return (NULL);
+			return ("");
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
-			res = malloc(sizeof(char) * (n + 1));
+			res = malloc(sizeof *res * (n + 1));
 			if (res != NULL)
 			{
 				for (i = 0; i <= n - 1; i++)
 					res[i] = s2[i];
 				res[i] = '\0';
 			}
-			else
-				return (NULL);
 		}
 		else
 			if (n != 0)
@@ -86,11 +84,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
-			res = malloc(sizeof(char) * (strlen(s1) + n + 1));
+			res = malloc(sizeof *res * (strlen(s1) + n + 1));
 			if (res != NULL)
 			{
-				for (i = 0; i <= (unsigned int)strlen(s1) - 1; i++)
-					res[i] = s1[i];
+				if ((int)strlen(s1) != 0)
+					for (i = 0; i <= (unsigned int)strlen(s1) - 1; i++)
+						res[i] = s1[i];
 				k = (unsigned int)strlen(s1) + n - 1;
 				for (i = (unsigned int)strlen(s1); i <= k; i++)
 				{
@@ -99,8 +98,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 				}
 				res[i] = '\0';
 			}
-			else
-				return (NULL);
 		}
 		else
 			if (n != 0)
