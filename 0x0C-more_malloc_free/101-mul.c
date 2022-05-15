@@ -80,6 +80,28 @@ void revstr(char *s)
 	}
 }
 /**
+ * chkzerostr - checks zero string
+ * @str: string
+ *
+ * Return: 1 if true, otherwise 0
+ */
+unsigned int chkzerostr(char *str)
+{
+	unsigned int i = 0, res;
+
+	while (s[i] != '\0')
+	{
+		if (s[i] == '0')
+		{
+			res = 1;
+			i++;
+		}
+		else
+			return (0);
+	}
+	return (res);
+}
+/**
  * main - multiplies 2 positive numbers
  * @argc: number of arguments
  * @argv: list of arguments
@@ -96,12 +118,12 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	if (strcmp(argv[1], "0") != 0 && atoi(argv[1]) == 0)
+	if (chkzerostr(argv[1]) == 0 && atoi(argv[1]) == 0)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (strcmp(argv[2], "0") != 0 && atoi(argv[2]) == 0)
+	if (chkzerostr(argv[2]) == 0 && atoi(argv[2]) == 0)
 	{
 		printf("Error\n");
 		exit(98);
