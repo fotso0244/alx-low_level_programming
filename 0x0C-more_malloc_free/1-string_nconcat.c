@@ -45,7 +45,7 @@ char *concat(char *s1, char *s2, unsigned int n)
 			return ("");
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
-			res = malloc(sizeof (*res) * (n + 1));
+			res = malloc(sizeof(*res) * (n + 1));
 			if (res != NULL)
 			{
 				for (i = 0; i <= n - 1; i++)
@@ -84,7 +84,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		if (n <= (unsigned int)strlen(s2) && n != 0)
 		{
-			res = malloc(sizeof (*res) * (strlen(s1) + n + 1));
+			res = malloc(sizeof(*res) * (strlen(s1) + n + 1));
 			if (res != NULL)
 			{
 				if ((int)strlen(s1) != 0)
