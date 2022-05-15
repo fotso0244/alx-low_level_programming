@@ -40,5 +40,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			res = malloc(2);
 			if (res != NULL)
 				strcpy(res, "");
+		}
 	return (res);
 }
