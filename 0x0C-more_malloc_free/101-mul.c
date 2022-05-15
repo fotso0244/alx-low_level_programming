@@ -133,5 +133,9 @@ int main(int argc, char **argv)
 	revstr(res);
 	printstr(res);
 	free(res);
+	free(argv[0]);
+	free(argv[1]);
+	free(argv[2]);
+	free(argv);
 	return (0);
 }
