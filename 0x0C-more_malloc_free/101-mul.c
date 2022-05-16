@@ -31,23 +31,6 @@ void printstr(char *s)
 	printstr(s + 1);
 }
 /**
- * puiss10 - computes 10 power x
- * @power: power
- *
- * Return: an unsigned int
- */
-unsigned int puiss10(unsigned int power)
-{
-	unsigned int i = 1, res = 1;
-
-	while (i <= power)
-	{
-		res *= 10;
-		i++;
-	}
-	return (res);
-}
-/**
  * emptystr - creates empty string
  *
  * Return: pointer to empty string
@@ -118,23 +101,6 @@ char *multiply(char *s1, char *s2)
 		str = emptystr();
 	return (str);
 }
-/**
- * revstr - reverses a string
- * @s: a string
- */
-/*
-void revstr(char *s)
-{
-	int i, length, temp;
-
-	length = strlen(s);
-	for (i = 0; i < length / 2; i++)
-	{
-		temp = s[i];
-		s[i] = s[length - i - 1];
-		s[length - i - 1] = temp;
-	}
-}*/
 /**
  * chkzerostr - checks zero string
  * @str: string
