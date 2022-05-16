@@ -101,7 +101,7 @@ char *multiply(char *s1, char *s2)
 		while (i >= 0 && res[i] == '0')
 			i--;
 		if (i == -1)
-			return (0);
+			return ("0");
 		str = malloc(i + 2);
 		if (str != NULL)
 		{
@@ -180,6 +180,7 @@ int main(int argc, char **argv)
 	}
 	res = multiply(argv[1], argv[2]);
 	printstr(res);
-	free(res);
+	if (strcmp(res, "0") != 0)
+		free(res);
 	return (0);
 }
