@@ -94,7 +94,7 @@ char *multiply(char *s1, char *s2)
 				i_n2++;
 			}
 			if (carry > 0)
-				res[i_n1 + i_n2] = carry;
+				res[i_n1 + i_n2] = carry + '0';
 			i_n1++;
 		}
 		i = (int)strlen(res) - 1;
