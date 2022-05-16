@@ -11,7 +11,7 @@
 void initstr(char *s, unsigned int size)
 {
 	unsigned int i;
-	
+
 	if (s != NULL)
 		for (i = 0; i <= size - 1; i++)
 			s[i] = '0';
@@ -49,6 +49,34 @@ char *emptystr()
 	return (res);
 }
 /**
+ * multiply2 - multiplies 2 numbers
+ * @res: result
+ * @s2: second number
+ * @s1: first number
+ */
+void multiply2(char *res, char *s2, char *s1)
+{
+	int i_n1 = 0, i_n2 = 0, i, j, carry, n1, n2, sum;
+
+	for (j = (int)strlen(s2) - 1; j >= 0; j--)
+	{
+		carry = 0;
+		n1 = s2[j] - '0';
+		i_n2 = 0;
+		for (i = (int)strlen(s1) - 1; i >= 0; i--)
+		{
+			n2 = s1[i] - '0';
+			sum = n1 * n2 + res[i_n1 + i_n2] - 48 + carry;
+			carry = sum / 10;
+			res[i_n1 + i_n2] = (sum % 10) + 48;
+			i_n2++;
+		}
+		if (carry > 0)
+			res[i_n1 + i_n2] = carry + '0';
+		i_n1++;
+	}
+}
+/**
  * multiply - multiplies 2 string numbers
  * @s1: first string
  * @s2: second string
@@ -57,30 +85,14 @@ char *emptystr()
  */
 char *multiply(char *s1, char *s2)
 {
-	int i_n1 = 0, i_n2 = 0, i, j, carry, n1, n2, sum;
+	int i, j, carry;
 	char *res, *str;
 
 	res = malloc(strlen(s1) + strlen(s2) + 1);
 	if (res != NULL)
 	{
 		initstr(res, (unsigned int)strlen(s1) + (unsigned int)strlen(s2));
-		for (j = (int)strlen(s2) - 1; j >= 0; j--)
-		{
-			carry = 0;
-			n1 = s2[j] - '0';
-			i_n2 = 0;
-			for (i = (int)strlen(s1) - 1; i >= 0; i--)
-			{
-				n2 = s1[i] - '0';
-				sum = n1 * n2 + res[i_n1 + i_n2] - 48 + carry;
-				carry = sum / 10;
-				res[i_n1 + i_n2] = (sum % 10) + 48;
-				i_n2++;
-			}
-			if (carry > 0)
-				res[i_n1 + i_n2] = carry + '0';
-			i_n1++;
-		}
+		multiply2(res, s2, s1);
 		i = (int)strlen(res) - 2;
 		while (i >= 0 && res[i] == '0')
 			i--;
@@ -104,7 +116,7 @@ char *multiply(char *s1, char *s2)
 }
 /**
  * chkzerostr - checks zero string
- * @str: string
+ * @s: string
  *
  * Return: 1 if true, otherwise 0
  */
