@@ -12,7 +12,7 @@ char *cpystr(char *name)
 {
 	char *dest;
 
-	dest = malloc(sizeof *dest * (strlen(name) + 1));
+	dest = malloc(sizeof(*dest) * (strlen(name) + 1));
 	if (dest != NULL)
 	{
 		strcpy(dest, name);
@@ -34,7 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name != NULL && owner != NULL)
 	{
-		res = malloc(sizeof *res);	
+		res = malloc(sizeof(*res));
 		if (res != NULL)
 		{
 			res->name = cpystr(name);
