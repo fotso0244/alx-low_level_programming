@@ -15,6 +15,7 @@ void initstr(char *s, unsigned int size)
 	if (s != NULL)
 		for (i = 0; i <= size - 1; i++)
 			s[i] = '0';
+	s[i] = '\0';
 }
 /**
  * printstr - prints a string using _putchar
@@ -59,7 +60,7 @@ char *multiply(char *s1, char *s2)
 	int i_n1 = 0, i_n2 = 0, i, j, carry, n1, n2, sum;
 	char *res, *str;
 
-	res = malloc(strlen(s1) + strlen(s2));
+	res = malloc(strlen(s1) + strlen(s2) + 1);
 	if (res != NULL)
 	{
 		initstr(res, (unsigned int)strlen(s1) + (unsigned int)strlen(s2));
@@ -80,7 +81,7 @@ char *multiply(char *s1, char *s2)
 				res[i_n1 + i_n2] = carry + '0';
 			i_n1++;
 		}
-		i = (int)strlen(res) - 1;
+		i = (int)strlen(res) - 2;
 		while (i >= 0 && res[i] == '0')
 			i--;
 		if (i == -1)
