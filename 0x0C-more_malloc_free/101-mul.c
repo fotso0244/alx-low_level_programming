@@ -1,8 +1,21 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
+/**
+ * initstr - initializes a string
+ * @s: a string
+ * @size: size of string
+ */
+void initstr(char *s, unsigned int size)
+{
+	unsigned int i;
+	
+	if (s != NULL)
+		for (i = 0; i <= size - 1; i++)
+			s[i] = '0';
+}
 /**
  * printstr - prints a string using _putchar
  * @s: a string
@@ -35,38 +48,81 @@ unsigned int puiss10(unsigned int power)
 	return (res);
 }
 /**
- * tostring - converts positive number to string
- * @mul: positive number
+ * emptystr - creates empty string
+ *
+ * Return: pointer to empty string
+ */
+char *emptystr()
+{
+	char *res;
+
+	res = malloc(2);
+	if (res != NULL)
+	{
+		strcpy(res, "");
+		res[1] = '\0';
+	}
+	return (res);
+}
+/**
+ * multiply - multiplies 2 string numbers
+ * @s1: first string
+ * @s2: second string
  *
  * Return: a pointer to string
  */
-char *tostring(unsigned int mul)
+char *multiply(char *s1, char *s2)
 {
-	unsigned int i = 1, div = mul, j, mod;
-	char *s;
+	int i_n1 = 0, i_n2 = 0, i, j, carry, n1, n2, sum;
+	char *res, *str;
 
-	while (mul / puiss10(i) != 0)
+	res = malloc(strlen(s1) + strlen(s2));
+	if (res != NULL)
 	{
-		i++;
-	}
-	s = malloc(sizeof(*s) * (i + 1));
-	if (s != NULL)
-	{
-		for (j = 0; j <= i - 1; j++)
+		initstr(res, (unsigned int)strlen(s1) + (unsigned int)strlen(s2));
+		for (j = (int)strlen(s2) - 1; j >= 0; j--)
 		{
-			mod = div % 10;
-			s[j] = mod + 48;
-			div /= 10;
-
+			carry = 0;
+			n1 = s2[j] - '0';
+			i_n2 = 0;
+			for (i = (int)strlen(s1) - 1; i >= 0; i--)
+			{
+				n2 = s1[i] - '0';
+				sum = n1 * n2 + res[i_n1 + i_n2] - 48 + carry;
+				carry = sum / 10;
+				res[i_n1 + i_n2] = (sum % 10) + 48;
+				i_n2++;
+			}
+			if (carry > 0)
+				res[i_n1 + i_n2] = carry;
+			i_n1++;
 		}
-		s[j] = '\0';
+		i = (int)strlen(res) - 1;
+		while (i >= 0 && res[i] == '0')
+			i--;
+		if (i == -1)
+			return (0);
+		str = malloc(i + 2);
+		if (str != NULL)
+		{
+			carry = i;
+			for (j = 0; j <= i; j++)
+				str[j] = res[carry--];
+			str[j] = '\0';
+			free(res);
+		}
+		else
+			str = emptystr();
 	}
-	return (s);
+	else
+		str = emptystr();
+	return (str);
 }
 /**
  * revstr - reverses a string
  * @s: a string
  */
+/*
 void revstr(char *s)
 {
 	int i, length, temp;
@@ -78,7 +134,7 @@ void revstr(char *s)
 		s[i] = s[length - i - 1];
 		s[length - i - 1] = temp;
 	}
-}
+}*/
 /**
  * chkzerostr - checks zero string
  * @str: string
@@ -91,7 +147,7 @@ unsigned int chkzerostr(char *s)
 
 	while (s[i] != '\0')
 	{
-		if (s[i] == '0')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			res = 1;
 			i++;
@@ -110,7 +166,6 @@ unsigned int chkzerostr(char *s)
  */
 int main(int argc, char **argv)
 {
-	unsigned int mul;
 	char *res;
 
 	if (argc - 1 != 2)
@@ -118,19 +173,12 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	if (chkzerostr(argv[1]) == 0 && atoi(argv[1]) == 0)
+	if (chkzerostr(argv[1]) == 0 || chkzerostr(argv[2]) == 0)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (chkzerostr(argv[2]) == 0 && atoi(argv[2]) == 0)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	mul = (unsigned int)atoi(argv[1]) * (unsigned int)atoi(argv[2]);
-	res = tostring(mul);
-	revstr(res);
+	res = multiply(argv[1], argv[2]);
 	printstr(res);
 	free(res);
 	return (0);
