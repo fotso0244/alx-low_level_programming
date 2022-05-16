@@ -20,36 +20,6 @@ char *cpystr(char *name)
 	}
 	return (dest);
 }
-/*dog_t *new_dog2(char *name, float age, char *owner)
-{
-	dog_t *res;
-
-	res = malloc(sizeof(dog_t));
-	if (res != NULL)
-	{
-		if (name != NULL && owner == NULL)
-		{
-			res->name = cpystr(name);
-			res->owner = owner;
-			res->age = age;
-		}
-		if (owner != NULL && name == NULL)
-		{
-			res->owner = cpystr(owner);
-			res->name = name;
-			res->age = age;
-		}
-		else
-		{
-			res->name = NULL;
-			res->owner = NULL;
-			res->age = age;
-		}
-		return (res);
-	}
-	else
-		return (NULL);
-}*/
 /**
  * new_dog - creates new object of struct dog
  * @name: name
@@ -83,9 +53,5 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 		return (NULL);
-	/*else
-	{
-		res = new_dog2(name, age, owner);
-	}*/
 	return (res);
 }
