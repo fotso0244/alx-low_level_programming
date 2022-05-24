@@ -1,3 +1,36 @@
+; 101-hello_holberton.asm    print a string using printf
+; Assemble:	  nasm -f elf64 -l 101-hello_holberton.lst  101-hello_holberton.asm
+; Link:		  gcc -m64 -o 101-hello_holberton_64  101-hello_holberton.o
+; Run:		  ./101-hello_holberton > 101-hello_holberton.out
+; Output:	  cat 101-hello_holberton.out
+
+; Equivalent C code
+; // hello.c
+; #include <stdio.h>
+; int main()
+; {
+;   char msg[] = "Hello world\n";
+;   printf("%s\n",msg);
+;   return 0;
+; }
+	
+; Declare needed C  functions; hello_64.asm    print a string using printf
+; Assemble:	  nasm -f elf64 -l hello_64.lst  hello_64.asm
+; Link:		  gcc -m64 -o hello_64  hello_64.o
+; Run:		  ./hello_64 > hello_64.out
+; Output:	  cat hello_64.out
+
+; Equivalent C code
+; // hello.c
+; #include <stdio.h>
+; int main()
+; {
+;   char msg[] = "Hello world\n";
+;   printf("%s\n",msg);
+;   return 0;
+; }
+	
+; Declare needed C  functions
  extern	printf		; the C function, to be called
 
         section .data		; Data section, initialized variables
