@@ -2,6 +2,28 @@
 #include <stddef.h>
 #include <stdlib.h>
 /**
+ * listint_len - returns number of  elements of a listint_t list
+ * @h: a listint_t list
+ *
+ * Return: number of elements
+ */
+size_t listint_len(const listint_t *h)
+{
+	const listint_t *p;
+	size_t c = 0;
+
+	if (h == NULL)
+		return (0);
+	p = h;
+	while (p->next != NULL)
+	{
+		c++;
+		p = p->next;
+	}
+	c++;
+	return (c);
+}
+/**
  * delete_nodeint_at_index - deletes a node
  * @head: a listint_t list
  * @index: an index
@@ -15,7 +37,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	if (*head == NULL)
 		return (-1);
-	if (index != 0 && (int)index <= listint_len(*head) - 1)
+	if (index != 0 && index <= listint_len(*head) - 1)
 	{
 		while (i < (int)index)
 		{
