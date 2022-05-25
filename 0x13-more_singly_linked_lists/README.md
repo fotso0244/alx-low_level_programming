@@ -3,3 +3,4 @@ Code 2-add_nodeint.c adds a new node at the beginning of a listint_t list
 Code 3-add_nodeint_end.c adds a node at the end of a listint_t list
 Code 4-free_listint.c frees a listint_t list
 Code 5-free_listint2 frees a listint_t list by set head to NULL
+Code 6-pop_listint.c deletes the head node of a listint_t list
