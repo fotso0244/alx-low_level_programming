@@ -50,6 +50,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		i = 1;
 	}
 	else
+		if (index <= listint_len(*head) - 1)
 		{
 			*head = (*head)->next;
 			free(c);
