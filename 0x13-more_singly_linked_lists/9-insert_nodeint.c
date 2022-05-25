@@ -26,7 +26,7 @@ size_t listint_len(const listint_t *h)
 	return (c);
 }
 /**
- * insert_node_at0 - inserts a new node at index 0
+ * insert_nodeint_at0 - inserts a new node at index 0
  * @head: a listint_t list
  * @n: a new node
  *
