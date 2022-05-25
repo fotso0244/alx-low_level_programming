@@ -8,3 +8,4 @@ Code 7-get_nodeint.c retuens the nth node of a listint_t list
 Code 8-sum_listint.c returns the sum of all data n of a listint_t list
 Code 9-insert_nodeint.c inserts a new node at index
 Code 1-listint_len returns length of a lisint_t list
+Code 10-delete_nodeint.c deletes a node
