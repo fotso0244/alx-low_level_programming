@@ -2,6 +2,29 @@
 #include "lists.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
+/**
+ * listint_len - returns number of  elements of a listint_t list
+ * @h: a listint_t list
+ *
+ * Return: number of elements
+ */
+size_t listint_len(const listint_t *h)
+{
+	const listint_t *p;
+	size_t c = 0;
+	
+	if (h == NULL)
+		return (0);
+	p = h;
+	while (p->next != NULL)
+	{
+		c++;
+		p = p->next;
+	}
+	c++;
+	return (c);
+}
 /**
  * insert_nodeint_at_index - inserts a new node
  * @head: a listint_t list
@@ -13,7 +36,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 {
 	listint_t *c, *new, *prec = NULL;
-	unsigned int i = 0;
+	unsigned int i = 0, length = listint_len(*head);
 
 	if (head != NULL)
 	{
@@ -48,7 +71,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 			}
 		}
 		else
-			return (NULL);
+
+			if (c == NULL && index == length)
+				prec = add_nodeint_end(head, n);
+			else
+				return (NULL);
 	}
 	return (prec);
 }
