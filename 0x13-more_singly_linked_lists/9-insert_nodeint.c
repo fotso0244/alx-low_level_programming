@@ -32,15 +32,15 @@ size_t listint_len(const listint_t *h)
  *
  * Return: address of new node
  */
-listint_t *insert_node_at0(listint **head, listint_t *n)
+listint_t *insert_nodeint_at0(listint_t **head, listint_t *n)
 {
 	listint_t *c;
 
 	if ((*head)->next == NULL)
 	{
 		c = *head;
-		*head = new;
-		new->next = c;
+		*head = n;
+		n->next = c;
 	}
 	return (*head);
 }
@@ -77,7 +77,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 				prec = prec->next;
 			}
 			if (index == 0)
-				prec = insert_node_at0(head, new);
+				prec = insert_nodeint_at0(head, new);
 		}
 		else
 
