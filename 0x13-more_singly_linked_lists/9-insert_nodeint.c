@@ -36,12 +36,9 @@ listint_t *insert_nodeint_at0(listint_t **head, listint_t *n)
 {
 	listint_t *c;
 
-	if ((*head)->next == NULL)
-	{
-		c = *head;
-		*head = n;
-		n->next = c;
-	}
+	c = *head;
+	*head = n;
+	n->next = c;
 	return (*head);
 }
 /**
