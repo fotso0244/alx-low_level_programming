@@ -13,7 +13,7 @@ size_t listint_len(const listint_t *h)
 {
 	const listint_t *p;
 	size_t c = 0;
-	
+
 	if (h == NULL)
 		return (0);
 	p = h;
@@ -24,6 +24,25 @@ size_t listint_len(const listint_t *h)
 	}
 	c++;
 	return (c);
+}
+/**
+ * insert_node_at0 - inserts a new node at index 0
+ * @head: a listint_t list
+ * @n: a new node
+ *
+ * Return: address of new node
+ */
+listint_t *insert_node_at0(listint **head, listint_t *n)
+{
+	listint_t *c;
+
+	if ((*head)->next == NULL)
+	{
+		c = *head;
+		*head = new;
+		new->next = c;
+	}
+	return (*head);
 }
 /**
  * insert_nodeint_at_index - inserts a new node
@@ -57,18 +76,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 				new->next = c;
 				prec = prec->next;
 			}
-			if (index == 0 && c->next == NULL)
-			{
-				c->next = new;
-				new->next = NULL;
-				prec = c->next;
-			}
-			if (index == 0 && c->next != NULL)
-			{
-				*head = new;
-				new->next = c;
-				prec = *head;
-			}
+			if (index == 0)
+				prec = insert_node_at0(head, new);
 		}
 		else
 
