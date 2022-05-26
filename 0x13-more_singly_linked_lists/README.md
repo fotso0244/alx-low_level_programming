@@ -11,3 +11,4 @@ Code 1-listint_len returns length of a lisint_t list
 Code 10-delete_nodeint.c deletes a node
 Code 100reverse_listint.c reverses a listint_t list
 Code 101-print_listint_safe.c prints a list with a loop
+Code 102-free_listint_safe.c frees a listint_t list with a loop
