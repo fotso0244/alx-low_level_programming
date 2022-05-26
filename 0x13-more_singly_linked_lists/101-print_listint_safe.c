@@ -80,6 +80,5 @@ size_t print_listint_safe(const listint_t *h)
 	}
 	if (cur != NULL)
 		printf("-> [%p] %d\n",(void *)cur, cur->n);
-	c++;
 	return (c);
 }
