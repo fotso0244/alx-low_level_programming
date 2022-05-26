@@ -12,3 +12,4 @@ Code 10-delete_nodeint.c deletes a node
 Code 100reverse_listint.c reverses a listint_t list
 Code 101-print_listint_safe.c prints a list with a loop
 Code 102-free_listint_safe.c frees a listint_t list with a loop
+Code 103-find_loop.c finds a loop in a listint_t list
