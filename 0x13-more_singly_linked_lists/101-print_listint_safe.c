@@ -54,6 +54,24 @@ int find_node(const listint_t *node, listint_t *list)
 	return (i);
 }
 /**
+ * free_listint - frees a listint_t list
+ * @head: a listint_t list
+ */
+void free_listint(listint_t *head)
+{
+	listint_t *c;
+	
+	if (head != NULL)
+	{
+		while (head != NULL)
+		{
+			c = head;
+			head = head->next;
+			free(c);
+		}
+	}
+}
+/**
  * print_listint_safe - prints all elements of a listint_t list
  * @h: a listint_t list
  *
@@ -80,5 +98,6 @@ size_t print_listint_safe(const listint_t *h)
 	}
 	if (cur != NULL)
 		printf("-> [%p] %d\n",(void *)cur, cur->n);
+	free(newL);
 	return (c);
 }
