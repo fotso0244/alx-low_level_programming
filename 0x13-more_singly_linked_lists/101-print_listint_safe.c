@@ -60,7 +60,7 @@ int find_node(const listint_t *node, listint_t *list)
 void free_listint(listint_t *head)
 {
 	listint_t *c;
-	
+
 	if (head != NULL)
 	{
 		while (head != NULL)
@@ -97,7 +97,7 @@ size_t print_listint_safe(const listint_t *h)
 			break;
 	}
 	if (cur != NULL)
-		printf("-> [%p] %d\n",(void *)cur, cur->n);
-	free(newL);
+		printf("-> [%p] %d\n", (void *)cur, cur->n);
+	free_listint(newL);
 	return (c);
 }
