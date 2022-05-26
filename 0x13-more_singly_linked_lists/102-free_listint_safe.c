@@ -89,6 +89,11 @@ size_t free_listint_safe(listint_t **h)
 		return (0);
 	cur = *h;
 	newL = NULL;
+	if (*h == (*h)->next)
+	{
+		*h = NULL;
+		free((void *)cur);
+	}
 	while (!find_node_102(cur, newL))
 	{
 		*h = (*h)->next;
