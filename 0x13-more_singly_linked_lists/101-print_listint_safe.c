@@ -3,7 +3,7 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * add_nodeint_end - adds a new node at end of a list_t list
+ * add_nodeint_at_end - adds a new node at end of a list_t list
  * @head: a list_t node
  * @n: an integer
  */
