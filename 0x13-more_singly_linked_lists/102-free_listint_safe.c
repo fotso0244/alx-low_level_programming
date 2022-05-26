@@ -41,6 +41,8 @@ int find_node_102(const listint_t *node, listint_t *list)
 	listint_t *c = list;
 	int i = 0;
 
+	if (node == NULL)
+		return (1);
 	while (c != NULL)
 	{
 		if (c->n != node->n)
