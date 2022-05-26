@@ -10,3 +10,4 @@ Code 9-insert_nodeint.c inserts a new node at index
 Code 1-listint_len returns length of a lisint_t list
 Code 10-delete_nodeint.c deletes a node
 Code 100reverse_listint.c reverses a listint_t list
+Code 101-print_listint_safe.c prints a list with a loop
