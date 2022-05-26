@@ -72,48 +72,25 @@ void free_listint_103(listint_t *head)
 	}
 }
 /**
- * listint_len_with_loop - returns len of a listint_t list
+ * find_listint_loop - finds loop in a listint_t list
  * @h: a listint_t list
  *
- * Return: number of nodes
+ * Return: address of node start loop
  */
-size_t listint_len_with_loop(const listint_t *h)
+listint_t *find_listint_loop(listint_t *head)
 {
-	const listint_t *cur;
+	listint_t *cur;
 	listint_t *newL;
-	size_t c = 0;
 
-	if (h == NULL)
-		return (0);
-	cur = h;
+	cur = head;
 	newL = NULL;
 	while (!find_node_103(cur, newL))
 	{
-		c++;
 		add_nodeint_at_end_103(&newL, cur->n);
 		cur = cur->next;
 		if (cur == NULL)
 			break;
 	}
 	free_listint_103(newL);
-	return (c);
-}
-/**
- * find_listint_loop - finds a loop in a listint_t list
- * @head: a listint_t list
- *
- * Return: address to the node start of loop
- */
-listint_t *find_listint_loop(listint_t *head)
-{
-	int i = 0;
-	listint_t *cur;
-
-	cur = head;
-	while (i < (int)listint_len_with_loop(head))
-	{
-		cur = cur->next;
-		i++;
-	}
 	return (cur);
 }
