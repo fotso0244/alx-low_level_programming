@@ -5,7 +5,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int mask = 1 << 31, nb, b = 0;
+	unsigned int mask = 1 << 63, nb, b = 0;
 
 	for (nb = 1; nb <= 32; ++nb)
 	{
