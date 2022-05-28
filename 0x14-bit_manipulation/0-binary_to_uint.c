@@ -26,11 +26,15 @@ int puiss2(int i)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i = (int)strlen(b) - 1, res = 0, j = 0;
+	int i, res = 0, j = 0;
 
+	if (b != NULL)
+		i = (int)strlen(b) - 1;
+	else
+		return (0);
 	while (i >= 0)
 	{
-		if (b != NULL && (b[i] == 48 || b[i] == 49))
+		if (b[i] == 48 || b[i] == 49)
 		{
 			res += ((b[j] - 48) * puiss2(i));
 			i--;
