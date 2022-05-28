@@ -7,7 +7,7 @@ void print_binary(unsigned long int n)
 {
 	unsigned int mask = 1 << 63, nb, b = 0;
 
-	for (nb = 1; nb <= 32; ++nb)
+	for (nb = 1; nb <= 64; ++nb)
 	{
 		if ((n & mask) >= 1)
 		{
