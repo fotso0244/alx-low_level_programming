@@ -30,7 +30,7 @@ unsigned int binary_to_uint(const char *b)
 
 	while (i >= 0)
 	{
-		if (b[i] == 48 || b[i] == 49)
+		if (b != NULL && (b[i] == 48 || b[i] == 49))
 		{
 			res += ((b[j] - 48) * puiss2(i));
 			i--;
