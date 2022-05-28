@@ -15,9 +15,8 @@ void print_binary(unsigned long int n)
 			b = 1;
 		}
 		else
-			if ( b == 1 || nb == 32)
+			if (b == 1 || nb == 32)
 				_putchar('0');
 		n <<= 1;
 	}
-	_putchar('\n');
 }
