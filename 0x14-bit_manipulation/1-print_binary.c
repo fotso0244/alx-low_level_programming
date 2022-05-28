@@ -1,11 +1,13 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_binary - prints binary representation of a number
  * @n: a number
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int mask = 1 << 63, nb, b = 0;
+	unsigned long int mask = 1UL << 63;
+	int nb, b = 0;
 
 	for (nb = 1; nb <= 64; ++nb)
 	{
@@ -15,7 +17,7 @@ void print_binary(unsigned long int n)
 			b = 1;
 		}
 		else
-			if (b == 1 || nb == 32)
+			if (b == 1 || nb == 64)
 				_putchar('0');
 		n <<= 1;
 	}
