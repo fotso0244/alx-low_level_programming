@@ -12,7 +12,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int mask = 1UL << 63;
 	unsigned int i;
 	int res;
-	
+
 	for (i = 1; i <= 63 - index; i++)
 		n <<= 1;
 	if ((n & mask) >= 1)
