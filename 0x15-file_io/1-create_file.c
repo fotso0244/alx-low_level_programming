@@ -8,7 +8,7 @@
 /**
  * create_file - creates a text file
  * @filename: a file name
- * text_content: a text to fill a file
+ * @text_content: a text to fill a file
  *
  * Return: 1 if success, otherwise -1
  */
@@ -21,7 +21,7 @@ int create_file(const char *filename, char *text_content)
 		fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 		if (fd != -1)
 		{
-			if (text_content != NULL)
+			if (strcmp(text_content, "NULL") != 0)
 			{
 				w = write(fd, text_content, (int)strlen(text_content));
 				if (w != -1)
