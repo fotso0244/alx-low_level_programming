@@ -4,6 +4,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
  * count_char - returns number of character in a file
  * @filename: a text file
@@ -14,21 +15,25 @@ size_t count_char(const char *filename)
 {
 	size_t i = 0;
 	int fd;
-	char c;
+	char *c;
 
 	if (filename != NULL)
 	{
 		fd = open(filename, O_RDONLY);
 		if (fd != -1)
 		{
-			read(fd, &c, 1);
-			while (c != EOF)
+			c = malloc(sizeof(char));
+			read(fd, c, 1);
+			while (strcmp(c, "") != 0)
 			{
-				i++;
-				read(fd, &c, 1);
+				i++; 
+				free(c);
+				c= malloc(sizeof(char));
+				read(fd, c, 1);
 			}
 		}
 	}
+	free(c);
 	close(fd);
 	return (i);
 }
@@ -58,6 +63,7 @@ size_t read_textfile(const char *filename, size_t letters)
 					r = read(fd, buf, letters);
 					if (r != -1)
 						w = write(STDOUT_FILENO, buf, r);
+					free(buf);
 				}
 			}
 		}
