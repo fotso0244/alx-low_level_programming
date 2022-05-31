@@ -33,6 +33,13 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	return (w);
 }
+/**
+ * create_file - creates a text file
+ * @filename: a file name
+ * @text_content: a text to fill
+ *
+ * Return: 1 if success, otherwise -1
+ */
 int create_file(const char *filename, char *text_content)
 {
 	int fd, w = -1;
@@ -64,6 +71,12 @@ int create_file(const char *filename, char *text_content)
 	}
 	return (w);
 }
+/**
+ * count_char - returns size of a text file
+ * @filename: a text file
+ *
+ * Return: size of file
+ */
 size_t count_char(const char *filename)
 {
 	size_t i = 0;
@@ -101,7 +114,7 @@ int main(int argc, char **argv)
 {
 	int fd, count, c, cl, choice = 0;
 	char *buf;
-	
+
 	if (argc != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
