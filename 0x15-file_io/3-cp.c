@@ -129,28 +129,25 @@ int main(int argc, char **argv)
 	count = count_char(argv[1]);
 	if (fd != -1)
 	{
-		if (count != 0)
+		while (count >= 0)
 		{
-			while (count >= 0)
+			buf = malloc(sizeof(*buf) * 1024);
+			if (buf != NULL)
 			{
-				buf = malloc(sizeof(*buf) * 1024);
-				if (buf != NULL)
+				read(fd, buf, 1024);
+				if (choice == 0)
 				{
-					read(fd, buf, 1024);
-					if (choice == 0)
-					{
-						c = create_file(argv[2], buf);
-						choice = 1;
-					}
-					else
-						c = append_text_to_file(argv[2], buf);
-					free(buf);
-					count -= 1024;
-					if (c == -1)
-					{
-						dprintf(2, "Error: Can't write to %s\n", argv[2]);
-						exit(99);
-					}
+					c = create_file(argv[2], buf);
+					choice = 1;
+				}
+				else
+					c = append_text_to_file(argv[2], buf);
+				free(buf);
+				count -= 1024;
+				if (c == -1)
+				{
+					dprintf(2, "Error: Can't write to %s\n", argv[2]);
+					exit(99);
 				}
 			}
 		}
