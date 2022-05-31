@@ -26,9 +26,9 @@ size_t count_char(const char *filename)
 			read(fd, c, 1);
 			while (strcmp(c, "") != 0)
 			{
-				i++; 
+				i++;
 				free(c);
-				c= malloc(sizeof(char));
+				c = malloc(sizeof(char));
 				read(fd, c, 1);
 			}
 		}
