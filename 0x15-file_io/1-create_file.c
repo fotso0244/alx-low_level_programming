@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, w = -1;
 
-	if (filename != NULL)
+	if (filename != NULL && strcmp(filename, "") != 0)
 	{
 		fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 		if (fd != -1)
