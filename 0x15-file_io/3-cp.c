@@ -36,10 +36,19 @@ int append_text_to_file(const char *filename, char *text_content)
 int create_file(const char *filename, char *text_content)
 {
 	int fd, w = -1;
+	char cmd[32];
 
 	if (filename != NULL)
 	{
-		fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+		if (access(filename, F_OK) == -1)
+		{
+			fd = open(filename, O_WRONLY | O_CREAT);
+			sprintf(cmd, "chmod 664 %s", filename);
+			system(cmd);
+			/*fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0674);*/
+		}
+		else
+			fd = open(filename, O_WRONLY | O_TRUNC);
 		if (fd != -1)
 		{
 			if (text_content != NULL)
