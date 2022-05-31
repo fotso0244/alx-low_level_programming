@@ -38,7 +38,7 @@ int create_file(const char *filename, char *text_content)
 	int fd, w = -1;
 	char cmd[32];
 
-	if (filename != NULL)
+	if (filename != NULL && strcmp(filename, "") != 0)
 	{
 		if (access(filename, F_OK) == -1)
 		{
@@ -107,13 +107,13 @@ int main(int argc, char **argv)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	count = count_char(argv[1]);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+	count = count_char(argv[1]);
 	if (fd != -1)
 	{
 		if (count != 0)
