@@ -77,6 +77,7 @@ void print_version(unsigned char v)
 /**
  * print_os - prints 0S/ABI
  * @os: an os
+ * @a: a version
  */
 void print_os(unsigned char os, unsigned char a)
 {
@@ -136,7 +137,7 @@ void print_os(unsigned char os, unsigned char a)
 	printf("%u\n", a);
 }
 /**
- * printf_type - print type
+ * print_type - print type
  * @t: a type
  */
 void print_type(uint16_t t)
@@ -166,7 +167,7 @@ void print_type(uint16_t t)
 	}
 }
 /**
- * print_version_file - prints object file type
+ * print_entry_point - prints object file type
  * @v: a version
  */
 void print_entry_point(uint32_t v)
