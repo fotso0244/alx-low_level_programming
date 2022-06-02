@@ -52,7 +52,6 @@ int create_file(const char *filename, char *text_content)
 			fd = open(filename, O_WRONLY | O_CREAT);
 			sprintf(cmd, "chmod 664 %s", filename);
 			system(cmd);
-			/*fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0674);*/
 		}
 		else
 			fd = open(filename, O_WRONLY | O_TRUNC);
@@ -143,7 +142,10 @@ void copy2(char *file1, int count, char *file2)
 				c = append_text_to_file(file2, buf);
 			free(buf);
 			count -= 1024;
-			c2 = count;
+			if (count > 1024)
+				c2 = 1024;
+			else
+				c2 = count;
 			if (c == -1)
 			{
 				dprintf(2, "Error: Can't write to %s\n", file2);
