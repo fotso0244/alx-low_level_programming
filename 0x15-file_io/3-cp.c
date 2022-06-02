@@ -72,36 +72,91 @@ int create_file(const char *filename, char *text_content)
 	return (w);
 }
 /**
- * count_char - returns size of a text file
- * @filename: a text file
- *
- * Return: size of file
+ * copy1 - copies a file
+ * @file1: first file
+ * @count: a counter
+ * @file2: second file
  */
-size_t count_char(const char *filename)
+void copy1(char *file1, int count, char *file2)
 {
-	size_t i = 0;
-	int fd;
-	char *c;
+	char *buf;
+	int cl, fd, r, c;
 
-	if (filename != NULL)
+	fd = open(file1, O_RDONLY);
+	if (fd == -1)
 	{
-		fd = open(filename, O_RDONLY);
-		if (fd != -1)
+		dprintf(2, "Error: Can't read from file %s\n", file1);
+		exit(98);
+	}
+	buf = malloc(sizeof(*buf) * count);
+	r = read(fd, buf, count);
+	if (r == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", file1);
+		exit(98);
+	}
+	if (buf != NULL)
+	{
+		c = create_file(file2, buf);
+		if (c == -1)
 		{
-			c = malloc(sizeof(char));
-			read(fd, c, 1);
-			while (strcmp(c, "") != 0)
+			dprintf(2, "Error: Can't write to %s\n", file2);
+			exit(99);
+		}
+		free(buf);
+	}
+	cl = close(fd);
+	if (cl == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+/**
+ * copy2 - copies a file
+ * @file1: first file
+ * @count: a counter
+ * @file2: second file
+ */
+void copy2(char *file1, int count, char *file2)
+{
+	int cl, c2 = 1024, choice = 0, c, fd;
+	char *buf;
+
+	fd = open(file1, O_RDONLY);
+	while (count > 0)
+	{
+		buf = malloc(sizeof(*buf) * c2);
+		if (buf != NULL)
+		{
+			if (fd == -1 || read(fd, buf, c2) == -1)
 			{
-				i++;
-				free(c);
-				c = malloc(sizeof(char));
-				read(fd, c, 1);
+			dprintf(2, "Error: Can't read from file %s\n", file1);
+			exit(98);
 			}
-			close(fd);
+			if (choice == 0)
+			{
+				c = create_file(file2, buf);
+				choice = 1;
+			}
+			else
+				c = append_text_to_file(file2, buf);
+			free(buf);
+			count -= 1024;
+			c2 = count;
+			if (c == -1)
+			{
+				dprintf(2, "Error: Can't write to %s\n", file2);
+				exit(99);
+			}
 		}
 	}
-	free(c);
-	return (i);
+	cl = close(fd);
+	if (cl == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
 /**
  * main - copies a file
@@ -112,51 +167,39 @@ size_t count_char(const char *filename)
  */
 int main(int argc, char **argv)
 {
-	int fd, count, c, cl, choice = 0;
-	char *buf;
+	size_t i = 0;
+	int fd;
+	char *c;
 
 	if (argc != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
+	if (argv[1] != NULL)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	count = count_char(argv[1]);
-	if (fd != -1)
-	{
-		while (count >= 0)
+		fd = open(argv[1], O_RDONLY);
+		if (fd != -1)
 		{
-			buf = malloc(sizeof(*buf) * 1024);
-			if (buf != NULL)
+			c = malloc(sizeof(char));
+			if (c != NULL)
 			{
-				read(fd, buf, 1024);
-				if (choice == 0)
+				read(fd, c, 1);
+				while (strcmp(c, "") != 0)
 				{
-					c = create_file(argv[2], buf);
-					choice = 1;
+					i++;
+					free(c);
+					c = malloc(sizeof(char));
+					read(fd, c, 1);
 				}
-				else
-					c = append_text_to_file(argv[2], buf);
-				free(buf);
-				count -= 1024;
-				if (c == -1)
-				{
-					dprintf(2, "Error: Can't write to %s\n", argv[2]);
-					exit(99);
-				}
+				free(c);
 			}
-		}
-		cl = close(fd);
-		if (cl == -1)
-		{
-			dprintf(2, "Error: Can't close fd %d\n", fd);
-			exit(100);
+			close(fd);
 		}
 	}
+	if (i <= 1024)
+		copy1(argv[1], i, argv[2]);
+	else
+		copy2(argv[1], i, argv[2]);
 	return (0);
 }
