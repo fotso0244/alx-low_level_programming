@@ -176,6 +176,11 @@ int main(int argc, char **argv)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	if (strcmp(argv[2], "") == 0)
+	{
+		dprintf(2, "Error: Can't write to \"\"\n");
+		exit(99);
+	}
 	if (argv[1] != NULL)
 	{
 		fd = open(argv[1], O_RDONLY);
