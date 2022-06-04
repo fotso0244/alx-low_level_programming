@@ -158,7 +158,7 @@ void print_type(uint16_t t)
 	printf("  Type:");
 	for (i = 0; i <= 29; i++)
 		printf(" ");
-	switch(t)
+	switch (t)
 	{
 		case 0:
 			printf("NONE (Unknown)\n");
@@ -215,6 +215,7 @@ void read_elf_header(const char *elfFile)
 {
 	ElfW(Ehdr) head;
 	int fd, r;
+	unsigned char t[4] = {127, 'E', 'L', 'F'};
 
 	fd = open(elfFile, O_RDONLY);
 	if (fd != -1)
@@ -222,7 +223,7 @@ void read_elf_header(const char *elfFile)
 		r = read(fd, &head, sizeof(head));
 		if (r != -1)
 		{
-			if (head.e_ident[0] == 127 && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' && head.e_ident[3] == 'F')
+			if(memcmp(head.e_ident, t, 4) == 0)
 				print_head(head);
 			else
 			{
