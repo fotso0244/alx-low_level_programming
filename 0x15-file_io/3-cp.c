@@ -119,7 +119,7 @@ void copy1(char *file1, int count, char *file2)
  */
 void copy2(char *file1, int count, char *file2)
 {
-	int cl, c2 = 1024, choice = 0, c, fd;
+	int cl, c2 = 1024, choice = 0, c, r, fd;
 	char *buf;
 
 	fd = open(file1, O_RDONLY);
@@ -128,7 +128,8 @@ void copy2(char *file1, int count, char *file2)
 		buf = malloc(sizeof(*buf) * c2);
 		if (buf != NULL)
 		{
-			if (fd == -1 || read(fd, buf, c2) == -1)
+			r = read(fd, buf, c2);
+			if (fd == -1 || r == -1)
 			{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 			exit(98);
