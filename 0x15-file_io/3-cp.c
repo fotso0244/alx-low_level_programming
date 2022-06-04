@@ -84,14 +84,14 @@ void copy1(char *file1, int count, char *file2)
 	fd = open(file1, O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file1);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 		exit(98);
 	}
 	buf = malloc(sizeof(*buf) * count);
 	r = read(fd, buf, count);
 	if (r == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file1);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 		exit(98);
 	}
 	if (buf != NULL)
@@ -99,7 +99,7 @@ void copy1(char *file1, int count, char *file2)
 		c = create_file(file2, buf);
 		if (c == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", file2);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
 			exit(99);
 		}
 		free(buf);
@@ -107,7 +107,7 @@ void copy1(char *file1, int count, char *file2)
 	cl = close(fd);
 	if (cl == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -130,7 +130,7 @@ void copy2(char *file1, int count, char *file2)
 		{
 			if (fd == -1 || read(fd, buf, c2) == -1)
 			{
-			dprintf(2, "Error: Can't read from file %s\n", file1);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 			exit(98);
 			}
 			if (choice == 0)
@@ -148,7 +148,7 @@ void copy2(char *file1, int count, char *file2)
 				c2 = count;
 			if (c == -1)
 			{
-				dprintf(2, "Error: Can't write to %s\n", file2);
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
 				exit(99);
 			}
 		}
@@ -156,7 +156,7 @@ void copy2(char *file1, int count, char *file2)
 	cl = close(fd);
 	if (cl == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -175,12 +175,12 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	if (strcmp(argv[2], "") == 0)
 	{
-		dprintf(2, "Error: Can't write to \"\"\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to\n");
 		exit(99);
 	}
 	if (argv[1] != NULL)
