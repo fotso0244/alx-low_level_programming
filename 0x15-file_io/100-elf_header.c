@@ -223,7 +223,7 @@ void read_elf_header(const char *elfFile)
 		r = read(fd, &head, sizeof(head));
 		if (r != -1)
 		{
-			if(memcmp(head.e_ident, t, 4) == 0)
+			if (memcmp(head.e_ident, t, 4) == 0)
 				print_head(head);
 			else
 			{
