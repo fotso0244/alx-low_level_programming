@@ -52,6 +52,7 @@ void print_class(unsigned char c)
 void print_data(unsigned char d)
 {
 	int i;
+
 	printf("  Data:");
 	for (i = 0; i <= 29; i++)
 		printf(" ");
@@ -79,7 +80,7 @@ void print_version(unsigned char v)
  * @os: an os
  * @a: a version
  */
-void print_os(unsigned char os, unsigned char a)
+void print_os(unsigned char os)
 {
 	int i;
 
@@ -131,12 +132,17 @@ void print_os(unsigned char os, unsigned char a)
 			printf("Standalone\n");
 			break;
 		default:
-			{
-				for (i = 0; i <= 12; i++)
-					printf(" ");
-				printf("\n");
-			}
+			printf("\n");
 	}
+}
+/**
+ * print_abi_version - prints ABI Version
+ * @a: an ABI Version
+ */
+void print_abi_version(unsigned char a)
+{
+	int i;
+
 	printf("  ABI Version:");
 	for (i = 0; i <= 22; i++)
 		printf(" ");
@@ -197,7 +203,8 @@ void print_head(ElfW(Ehdr) head)
 	print_class(head.e_ident[4]);
 	print_data(head.e_ident[5]);
 	print_version(head.e_ident[6]);
-	print_os(head.e_ident[7], head.e_ident[8]);
+	print_os(head.e_ident[7]);
+	print_abi_version(head.e_ident[8]);
 	print_type(head.e_type);
 	print_entry_point(head.e_entry);
 }
