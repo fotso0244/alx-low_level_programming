@@ -95,13 +95,13 @@ void print_os(unsigned char os, unsigned char a)
 			printf("HP - UX\n");
 			break;
 		case 2:
-			printf("NetBSD\n");
+			printf("UNIX - NetBSD\n");
 			break;
 		case 3:
 			printf("Linux\n");
 			break;
 		case 6:
-			printf("Sun - Solaris\n");
+			printf("UNIX - Solaris\n");
 			break;
 		case 7:
 			printf("IBM - AIX\n");
@@ -130,6 +130,8 @@ void print_os(unsigned char os, unsigned char a)
 		case 255:
 			printf("Standalone\n");
 			break;
+		default:
+			printf("\n");
 	}
 	printf("  ABI Version:");
 	for (i = 0; i <= 22; i++)
