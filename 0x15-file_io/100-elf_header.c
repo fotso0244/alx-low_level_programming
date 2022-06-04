@@ -170,6 +170,8 @@ void print_type(uint16_t t)
 		case 4:
 			printf("Core file\n");
 			break;
+		default:
+			printf("EXEC (Excecutable file)\n");
 	}
 }
 /**
