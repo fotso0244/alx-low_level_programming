@@ -78,7 +78,6 @@ void print_version(unsigned char v)
 /**
  * print_os - prints 0S/ABI
  * @os: an os
- * @a: a version
  */
 void print_os(unsigned char os)
 {
@@ -87,7 +86,7 @@ void print_os(unsigned char os)
 	printf("  OS/ABI:");
 	for (i = 0; i <= 27; i++)
 		printf(" ");
-	switch(os)
+	switch (os)
 	{
 		case 0:
 			printf("UNIX - System V\n");
