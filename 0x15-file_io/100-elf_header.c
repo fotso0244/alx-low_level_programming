@@ -112,24 +112,6 @@ void print_os(unsigned char os)
 		case 9:
 			printf("FreeBSD\n");
 			break;
-		case 10:
-			printf("Compaq - TRU64\n");
-			break;
-		case 11:
-			printf("Novell - Modesto\n");
-			break;
-		case 12:
-			printf("OpenBSD\n");
-			break;
-		case 64:
-			printf("ARM - EABI\n");
-			break;
-		case 97:
-			printf("ARM\n");
-			break;
-		case 255:
-			printf("Standalone\n");
-			break;
 		default:
 			printf("\n");
 	}
