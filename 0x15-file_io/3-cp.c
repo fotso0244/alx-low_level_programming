@@ -180,7 +180,7 @@ int main(int argc, char **argv)
 	}
 	if (strcmp(argv[2], "") == 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to \n");
 		exit(99);
 	}
 	if (argv[1] != NULL)
