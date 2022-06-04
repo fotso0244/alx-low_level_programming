@@ -131,7 +131,11 @@ void print_os(unsigned char os, unsigned char a)
 			printf("Standalone\n");
 			break;
 		default:
-			printf("\n");
+			{
+				for (i = 0; i <= 12; i++)
+					printf(" ");
+				printf("\n");
+			}
 	}
 	printf("  ABI Version:");
 	for (i = 0; i <= 22; i++)
