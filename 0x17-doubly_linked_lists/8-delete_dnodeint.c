@@ -14,8 +14,8 @@ int delete_at_0(dlistint_t **head)
 	if (curr->next != NULL)
 	{
 		*head = curr->next;
+		head->prev = NULL;
 		free(curr);
-		curr->prev = NULL;
 		return (1);
 	}
 	if (curr->next == NULL && curr != NULL)
