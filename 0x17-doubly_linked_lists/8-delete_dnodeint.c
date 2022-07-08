@@ -15,6 +15,7 @@ int delete_at_0(dlistint_t **head)
 	{
 		*head = curr->next;
 		free(curr);
+		curr->prev = NULL;
 		return (1);
 	}
 	if (curr->next == NULL && curr != NULL)
