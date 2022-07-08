@@ -27,7 +27,7 @@ int delete_at_0(dlistint_t **head)
 /**
  * delete_dnodeint_at_index - deletes an element at index
  * @head: a doubly linked list
- * @idx: an index
+ * @index: an index
  *
  * Return: 1 if success, otherwise -1
  */
@@ -49,7 +49,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		else
 		{
 			upcurr = curr->next;
-			curr->next =upcurr->next;
+			curr->next = upcurr->next;
 			free(upcurr);
 			return (1);
 		}
