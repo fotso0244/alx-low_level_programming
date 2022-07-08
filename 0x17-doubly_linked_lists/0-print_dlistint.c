@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_dlistint - prints all elements of a double linked list
- * @dlistint_t: a double linked list
+ * @h: a double linked list
  *
  * Return: number of elements
  */
