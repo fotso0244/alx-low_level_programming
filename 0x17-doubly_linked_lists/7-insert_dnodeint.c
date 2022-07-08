@@ -33,7 +33,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx, int n)
 	}
 	else
 	{
-		if (i == 0)
+		if (idx == 0)
 		{
 			curr = add_dnodeint(head, (const int)n);
 			return (curr);
