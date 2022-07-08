@@ -48,7 +48,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx, int n)
 				return (curr);
 			}
 	}
-	if (curr->next == NULL)
+	if (curr->next == NULL && i == 0)
+	{
+		new->next = curr;
+		curr->prev = new;
+		curr = new;
+		*head = curr;
+	}
+	else
 		curr = NULL;
 	return (curr);
 }
