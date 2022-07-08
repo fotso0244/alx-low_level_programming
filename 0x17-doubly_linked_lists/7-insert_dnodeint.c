@@ -54,6 +54,8 @@ int n)
 		curr = add_dnodeint(head, (const int)n);
 		return (curr);
 	}
+	if (idx == dlistint_len(head))
+		return (add_dnodeint_end(head, (const int)n));
 	while (curr->next != NULL)
 		if (i != idx - 1)
 		{
