@@ -17,8 +17,12 @@ int delete_at_0(dlistint_t **head)
 		free(curr);
 		return (1);
 	}
-	free(curr);
-	return (1)
+	if (curr->next == NULL && curr != NULL)
+	{
+		free(curr);
+		*head = NULL;
+	}
+	return (1);
 }
 /**
  * delete_dnodeint_at_index - deletes an element at index
@@ -29,15 +33,15 @@ int delete_at_0(dlistint_t **head)
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *curr = *head;
+	dlistint_t *curr = *head, *upcurr;
 	unsigned int i = 0;
 
 	if (*head == NULL || head == NULL)
 		return (-1);
-	if (idx == 0)
+	if (index == 0)
 		return (delete_at_0(head));
 	while (curr->next != NULL)
-		if (i != idx - 1)
+		if (i != index - 1)
 		{
 			curr = curr->next;
 			i++;
