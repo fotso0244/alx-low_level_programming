@@ -5,3 +5,4 @@ Code 3-add_dnodeint_end adds a new element at end of a doubly list
 Code 4-free_dlistint
 Code 4-free_dlistint frees a doubly list
 Code 5-get_dnodeint gets a node from a doubly list
+Code 6-sum_dlistint computes sum of all data
